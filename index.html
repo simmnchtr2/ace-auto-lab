@@ -400,7 +400,7 @@
             </div>
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <div><h4>Email</h4><a href="mailto:info@aceautolab.com">simur@aceautolab.com</a></div>
+              <div><h4>Email</h4><a href="mailto:simur@aceautolab.com">simur@aceautolab.com</a></div>
             </div>
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -409,16 +409,22 @@
           </div>
         </div>
         <div class="reveal">
-          <div class="lead-form">
+          <form class="lead-form" id="leadForm">
+            <!-- Web3Forms -->
+            <input type="hidden" name="access_key" value="d2481c16-a7ca-4523-87a2-6e675f4c9b0e"/>
+            <input type="hidden" name="subject" value="New Lead — ACE AutoLab Website"/>
+            <input type="hidden" name="from_name" value="ACE AutoLab Website"/>
+            <input type="checkbox" name="botcheck" style="display:none"/>
+
             <div class="form-row">
-              <div class="field"><label for="fname">First Name</label><input type="text" id="fname" placeholder="John" autocomplete="given-name"/></div>
-              <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Smith" autocomplete="family-name"/></div>
+              <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="John" autocomplete="given-name" required/></div>
+              <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Smith" autocomplete="family-name" required/></div>
             </div>
-            <div class="field"><label for="email">Email Address</label><input type="email" id="email" placeholder="john@example.com" autocomplete="email"/></div>
-            <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="(310) 000-0000" autocomplete="tel"/></div>
+            <div class="field"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required/></div>
+            <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(310) 000-0000" autocomplete="tel"/></div>
             <div class="field">
               <label for="service">Service Needed</label>
-              <select id="service">
+              <select id="service" name="service" required>
                 <option value="" disabled selected>Select a service</option>
                 <option>Camera Calibration</option>
                 <option>Radar Calibration</option>
@@ -429,11 +435,11 @@
                 <option>Not Sure / Need Diagnosis</option>
               </select>
             </div>
-            <div class="field"><label for="vehicle">Vehicle (Year, Make, Model)</label><input type="text" id="vehicle" placeholder="e.g. 2022 Toyota Camry"/></div>
-            <div class="field"><label for="message">Additional Notes</label><textarea id="message" placeholder="Describe what happened (accident, windshield replacement, warning light, etc.)"></textarea></div>
-            <button type="button" class="form-submit" onclick="handleSubmit()">Request Appointment →</button>
-            <p class="form-note">We respond within 1 hour during business hours. No spam, ever.</p>
-          </div>
+            <div class="field"><label for="vehicle">Vehicle (Year, Make, Model)</label><input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2022 Toyota Camry"/></div>
+            <div class="field"><label for="message">Additional Notes</label><textarea id="message" name="message" placeholder="Describe what happened (accident, windshield replacement, warning light, etc.)"></textarea></div>
+            <button type="submit" class="form-submit" id="submitBtn">Request Appointment →</button>
+            <p class="form-note" id="formNote">We respond within 1 hour during business hours. No spam, ever.</p>
+          </form>
         </div>
       </div>
     </div>
@@ -481,16 +487,43 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    function handleSubmit() {
-      const fname = document.getElementById('fname').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('service').value;
-      if (!fname || !email || !service) { alert('Please fill in your name, email, and select a service.'); return; }
-      const btn = document.querySelector('.form-submit');
-      btn.textContent = 'Request Sent ✓';
-      btn.style.background = '#00ff88';
+    const form = document.getElementById('leadForm');
+    const btn  = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.textContent = 'Sending...';
       btn.disabled = true;
-    }
+
+      const data = new FormData(form);
+      const object = Object.fromEntries(data);
+      const json = JSON.stringify(object);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: json
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          btn.textContent = 'Request Sent ✓';
+          btn.style.background = '#00ff88';
+          note.textContent = "Thanks! We'll be in touch within 1 hour during business hours.";
+          note.style.color = '#00ff88';
+          form.reset();
+        } else {
+          throw new Error(result.message);
+        }
+      } catch(err) {
+        btn.textContent = 'Request Appointment →';
+        btn.disabled = false;
+        note.textContent = 'Something went wrong. Please call us directly at (310) 000-0000.';
+        note.style.color = '#ff6060';
+      }
+    });
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
