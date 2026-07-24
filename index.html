@@ -54,7 +54,7 @@
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,9,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100px; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 110px; transition: height 0.4s ease; }
     .nav-logo { display: flex; flex-direction: column; line-height: 1; text-decoration: none; }
     .nav-logo-ace { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.15em; background: linear-gradient(135deg, #fff 0%, #b0c8d8 50%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-logo-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.58rem; letter-spacing: 0.35em; color: var(--cyan); text-transform: uppercase; margin-top: 2px; }
@@ -206,7 +206,7 @@
   <nav aria-label="Main navigation">
     <div class="container nav-inner">
       <a href="/" class="nav-logo" aria-label="ACE AutoLab home">
-        <img src="/logo.png" alt="ACE AutoLab - Automotive Calibrations" height="90" style="display:block;"/>
+        <img src="/logo.png" alt="ACE AutoLab - Automotive Calibrations" id="navLogo" height="100" style="display:block; transition: height 0.4s ease;"/>
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -485,6 +485,19 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Shrinking nav on scroll
+    const navEl  = document.querySelector('.nav-inner');
+    const logoEl = document.getElementById('navLogo');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navEl.style.height = '68px';
+        logoEl.height = 52;
+      } else {
+        navEl.style.height = '110px';
+        logoEl.height = 100;
+      }
+    });
 
     const form = document.getElementById('leadForm');
     const btn  = document.getElementById('submitBtn');
