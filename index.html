@@ -173,6 +173,23 @@
     footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
     .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
     .footer-brand p { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-top: 0.8rem; max-width: 280px; }
+
+    /* SENSOR MAP */
+    .sensormap { background: var(--bg2); }
+    .sensormap-wrap { border: 1px solid var(--border); background: var(--bg3); padding: 2rem 1rem; position: relative; overflow: hidden; }
+    .sensormap-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .sensormap-wrap svg { display: block; width: 100%; height: auto; position: relative; }
+    .sm-label-title { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 600; fill: #eef4f8; letter-spacing: 0.02em; }
+    .sm-label-desc { font-family: 'Inter', sans-serif; font-size: 11.5px; fill: #7d97a8; }
+    .sm-caption { font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 500; fill: #00d4f5; letter-spacing: 0.28em; text-transform: uppercase; }
+    .sm-note { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 1.2rem; font-style: italic; }
+    @keyframes smPulse { 0%,100% { opacity: 0.15; r: 13; } 50% { opacity: 0.5; r: 19; } }
+    .sm-pulse { animation: smPulse 3s ease-in-out infinite; }
+    .sm-pulse.d1 { animation-delay: 0.4s; } .sm-pulse.d2 { animation-delay: 0.8s; }
+    .sm-pulse.d3 { animation-delay: 1.2s; } .sm-pulse.d4 { animation-delay: 1.6s; }
+    @media (prefers-reduced-motion: reduce) { .sm-pulse { animation: none; opacity: 0.25; } }
+    @media (max-width: 700px) { .sensormap-wrap { padding: 1rem 0.4rem; } .sm-label-desc { display: none; } }
+
     /* GUIDES */
     .guides { background: var(--bg); }
     .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
@@ -390,6 +407,132 @@
         <div class="area-item">Long Beach</div><div class="area-item">Compton</div>
         <div class="area-item">Gardena</div><div class="area-item">Carson</div>
       </div>
+    </div>
+  </section>
+
+
+  <section class="sensormap" id="sensormap" aria-labelledby="sensormap-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <p class="section-eyebrow">What We Calibrate</p>
+        <h2 class="section-title" id="sensormap-heading">Where Your Vehicle's Sensors Live</h2>
+        <p class="section-sub">Modern vehicles carry cameras and radar modules at multiple points around the body. Disturb any of them &mdash; through glass work, bumper repair, or a ride height change &mdash; and that system needs recalibration.</p>
+        <div class="divider-line"></div>
+      </header>
+
+      <div class="sensormap-wrap reveal">
+        <svg viewBox="0 0 920 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="smTitle smDesc">
+          <title id="smTitle">Diagram of ADAS sensor locations on a vehicle</title>
+          <desc id="smDesc">Top-down view of a vehicle showing the forward-facing camera behind the windshield, front radar in the bumper, corner and surround-view sensors, blind spot radar in the rear quarters, and the rear camera and park assist sensors.</desc>
+
+          <defs>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#111a22"/>
+              <stop offset="50%" stop-color="#0d151c"/>
+              <stop offset="100%" stop-color="#0a1017"/>
+            </linearGradient>
+            <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(0,212,245,0.10)"/>
+              <stop offset="100%" stop-color="rgba(0,212,245,0.03)"/>
+            </linearGradient>
+            <radialGradient id="coneGrad">
+              <stop offset="0%" stop-color="rgba(0,212,245,0.20)"/>
+              <stop offset="100%" stop-color="rgba(0,212,245,0)"/>
+            </radialGradient>
+          </defs>
+
+          <!-- detection cones -->
+          <path d="M460 150 L360 -10 L560 -10 Z" fill="url(#coneGrad)" opacity="0.5"/>
+          <path d="M460 470 L385 590 L535 590 Z" fill="url(#coneGrad)" opacity="0.35"/>
+
+          <!-- wheels -->
+          <rect x="352" y="170" width="20" height="56" rx="6" fill="#0a1017" stroke="#1b2b36" stroke-width="1.5"/>
+          <rect x="548" y="170" width="20" height="56" rx="6" fill="#0a1017" stroke="#1b2b36" stroke-width="1.5"/>
+          <rect x="352" y="378" width="20" height="56" rx="6" fill="#0a1017" stroke="#1b2b36" stroke-width="1.5"/>
+          <rect x="548" y="378" width="20" height="56" rx="6" fill="#0a1017" stroke="#1b2b36" stroke-width="1.5"/>
+
+          <!-- body -->
+          <rect x="366" y="118" width="188" height="368" rx="52" fill="url(#bodyGrad)" stroke="#24404f" stroke-width="2"/>
+          <!-- windshield -->
+          <path d="M394 246 L526 246 L508 196 Q460 182 412 196 Z" fill="url(#glassGrad)" stroke="#1d3543" stroke-width="1.5"/>
+          <!-- roof -->
+          <rect x="392" y="252" width="136" height="106" rx="12" fill="#0b1219" stroke="#1d3543" stroke-width="1.5"/>
+          <!-- rear window -->
+          <path d="M396 364 L524 364 L506 412 Q460 424 414 412 Z" fill="url(#glassGrad)" stroke="#1d3543" stroke-width="1.5"/>
+          <!-- mirrors -->
+          <rect x="356" y="252" width="14" height="22" rx="4" fill="#0d1720" stroke="#24404f" stroke-width="1.2"/>
+          <rect x="550" y="252" width="14" height="22" rx="4" fill="#0d1720" stroke="#24404f" stroke-width="1.2"/>
+          <!-- centerline -->
+          <line x1="460" y1="128" x2="460" y2="476" stroke="#16303d" stroke-width="1" stroke-dasharray="5 7"/>
+
+          <!-- ============ SENSORS ============ -->
+          <!-- 1 forward camera -->
+          <circle class="sm-pulse" cx="460" cy="234" r="13" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="460" cy="234" r="6" fill="#00d4f5"/>
+          <!-- 2 front radar -->
+          <circle class="sm-pulse d1" cx="460" cy="132" r="13" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="460" cy="132" r="6" fill="#00d4f5"/>
+          <!-- 3 corner sensors -->
+          <circle class="sm-pulse d2" cx="392" cy="152" r="11" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="392" cy="152" r="5" fill="#00d4f5"/>
+          <circle class="sm-pulse d2" cx="528" cy="152" r="11" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="528" cy="152" r="5" fill="#00d4f5"/>
+          <!-- 4 blind spot -->
+          <circle class="sm-pulse d3" cx="380" cy="424" r="11" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="380" cy="424" r="5" fill="#00d4f5"/>
+          <circle class="sm-pulse d3" cx="540" cy="424" r="11" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="540" cy="424" r="5" fill="#00d4f5"/>
+          <!-- 5 rear camera -->
+          <circle class="sm-pulse d4" cx="460" cy="472" r="13" fill="#00d4f5" opacity="0.15"/>
+          <circle cx="460" cy="472" r="6" fill="#00d4f5"/>
+
+          <!-- ============ CALLOUTS LEFT ============ -->
+          <!-- forward camera -->
+          <path d="M452 234 L300 234 L272 206" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="272" cy="206" r="3" fill="#00d4f5"/>
+          <text class="sm-label-title" x="258" y="196" text-anchor="end">Forward-Facing Camera</text>
+          <text class="sm-label-desc" x="258" y="214" text-anchor="end">Lane assist, AEB, traffic sign recognition</text>
+          <text class="sm-label-desc" x="258" y="230" text-anchor="end">Disturbed by any windshield replacement</text>
+
+          <!-- corner sensors -->
+          <path d="M384 152 L300 152 L272 124" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="272" cy="124" r="3" fill="#00d4f5"/>
+          <text class="sm-label-title" x="258" y="114" text-anchor="end">Corner &amp; Ultrasonic Sensors</text>
+          <text class="sm-label-desc" x="258" y="132" text-anchor="end">Park assist, cross-traffic detection</text>
+
+          <!-- blind spot -->
+          <path d="M372 424 L300 424 L272 452" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="272" cy="452" r="3" fill="#00d4f5"/>
+          <text class="sm-label-title" x="258" y="446" text-anchor="end">Blind Spot Radar</text>
+          <text class="sm-label-desc" x="258" y="464" text-anchor="end">Rear quarter panels &mdash; affected by</text>
+          <text class="sm-label-desc" x="258" y="480" text-anchor="end">bumper work and ride height changes</text>
+
+          <!-- ============ CALLOUTS RIGHT ============ -->
+          <!-- front radar -->
+          <path d="M468 132 L620 132 L648 104" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="648" cy="104" r="3" fill="#00d4f5"/>
+          <text class="sm-label-title" x="662" y="94">Front Radar Module</text>
+          <text class="sm-label-desc" x="662" y="112">Adaptive cruise, collision braking</text>
+          <text class="sm-label-desc" x="662" y="128">Mounted behind the front fascia</text>
+
+          <!-- surround view -->
+          <path d="M566 262 L620 262 L648 234" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="648" cy="234" r="3" fill="#00d4f5"/>
+          <text class="sm-label-title" x="662" y="228">Surround-View Cameras</text>
+          <text class="sm-label-desc" x="662" y="246">Mirror-mounted &mdash; 360&deg; parking view</text>
+
+          <!-- rear camera -->
+          <path d="M468 472 L620 472 L648 444" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="648" cy="444" r="3" fill="#00d4f5"/>
+          <text class="sm-label-title" x="662" y="438">Rear Camera &amp; Park Assist</text>
+          <text class="sm-label-desc" x="662" y="456">Reversing camera, rear cross-traffic alert</text>
+
+          <!-- captions -->
+          <text class="sm-caption" x="460" y="34" text-anchor="middle">Front</text>
+          <text class="sm-caption" x="460" y="544" text-anchor="middle">Rear</text>
+        </svg>
+      </div>
+      <p class="sm-note">Sensor placement varies by manufacturer and model. This diagram shows the most common configuration on late-model vehicles.</p>
     </div>
   </section>
 
