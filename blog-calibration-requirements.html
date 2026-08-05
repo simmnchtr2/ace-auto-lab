@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADAS Calibration Requirements by Manufacturer: What Actually Triggers It | ACE AutoLab</title>
+  <meta name="description" content="ADAS calibration requirements vary by make, model, year, and repair event. Learn the patterns that hold across manufacturers, and where to look up the exact requirement for any vehicle."/>
+  <meta name="keywords" content="ADAS calibration requirements by manufacturer, when is ADAS calibration required, static vs dynamic calibration, ADAS calibration triggers, ADAS calibration Los Angeles"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://aceautolab.com/blog-calibration-requirements.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="ADAS Calibration Requirements by Manufacturer: What Actually Triggers It"/>
+  <meta property="og:description" content="Requirements vary by make, model, year, and repair event. Here are the patterns that hold across manufacturers — and where to look up the exact answer."/>
+  <meta property="og:url" content="https://aceautolab.com/blog-calibration-requirements.html"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ADAS Calibration Requirements by Manufacturer: What Actually Triggers It",
+    "description": "ADAS calibration requirements vary by make, model, year, and repair event. Learn the patterns that hold across manufacturers.",
+    "author": {"@type": "Organization", "name": "ACE AutoLab"},
+    "publisher": {"@type": "Organization", "name": "ACE AutoLab", "url": "https://aceautolab.com"},
+    "datePublished": "2026-08-04",
+    "url": "https://aceautolab.com/blog-calibration-requirements.html"
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #06090c; color: #d8e8f0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    :root { --cyan: #00d4f5; --cyan-dim: rgba(0,212,245,0.12); --cyan-mid: rgba(0,212,245,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(0,212,245,0.1); --muted: #4a6070; --text: #a0b8c8; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,9,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); overflow: visible; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100px; transition: height 0.4s ease; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta { background: var(--cyan) !important; color: #06090c !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
+    @media (max-width: 900px) { .nav-links { display: none; } }
+    .article-hero { padding: 160px 0 64px; background: var(--bg); position: relative; border-bottom: 1px solid var(--border); }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 64px 64px; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; }
+    .meta-tag { font-family: 'Rajdhani', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--cyan-dim); padding: 0.2rem 0.7rem; }
+    .meta-date { font-size: 0.82rem; color: var(--muted); }
+    .article-hero h1 { font-family: 'Orbitron', monospace; font-size: clamp(1.5rem, 3.6vw, 2.6rem); font-weight: 900; color: var(--white); line-height: 1.18; margin-bottom: 1.2rem; position: relative; }
+    .article-hero .lead { font-size: 1.12rem; color: var(--text); line-height: 1.75; max-width: 640px; position: relative; }
+    .article-body { padding: 64px 0 96px; }
+    .article-content h2 { font-family: 'Orbitron', monospace; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 700; color: var(--white); margin: 2.8rem 0 1rem; line-height: 1.3; }
+    .article-content h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--cyan); margin: 2.2rem 0 0.6rem; }
+    .article-content p { color: var(--text); margin-bottom: 1.2rem; line-height: 1.8; font-size: 0.98rem; }
+    .article-content strong { color: var(--white); font-weight: 500; }
+    .article-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-dim); transition: border-color 0.2s; }
+    .article-content a:hover { border-color: var(--cyan); }
+    .article-content ul, .article-content ol { padding-left: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .article-content li { color: var(--text); font-size: 0.98rem; line-height: 1.7; }
+    .article-content li strong { color: var(--white); }
+    .callout { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 1.4rem 1.6rem; margin: 2rem 0; }
+    .callout.warning { border-left-color: #ff8a6a; }
+    .callout-label { font-family: 'Rajdhani', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.6rem; }
+    .callout.warning .callout-label { color: #ff8a6a; }
+    .callout p { margin: 0; font-size: 0.95rem; }
+    .callout p + p { margin-top: 0.8rem; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .stat-cell { background: var(--bg2); padding: 1.4rem 1.2rem; text-align: center; }
+    .stat-num { font-family: 'Orbitron', monospace; font-size: 1.6rem; font-weight: 700; color: var(--cyan); line-height: 1; margin-bottom: 0.4rem; }
+    .stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .trigger-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.8rem 0 2.5rem; }
+    .trigger-item { background: var(--bg2); padding: 1.2rem 1.4rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .trigger-icon { width: 32px; height: 32px; flex-shrink: 0; background: var(--cyan-dim); border: 1px solid var(--cyan-mid); display: flex; align-items: center; justify-content: center; clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%); }
+    .trigger-icon svg { width: 15px; height: 15px; color: var(--cyan); }
+    .trigger-text h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.98rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+    .trigger-text p { font-size: 0.88rem; color: var(--text); margin: 0; line-height: 1.6; }
+    .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.8rem 0 2.5rem; }
+    .type-card { background: var(--bg2); padding: 1.5rem; }
+    .type-badge { display: inline-block; font-family: 'Rajdhani', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.2rem 0.6rem; margin-bottom: 0.8rem; }
+    .type-badge.static { background: rgba(0,212,245,0.1); color: var(--cyan); border: 1px solid var(--cyan-dim); }
+    .type-badge.dynamic { background: rgba(255,200,80,0.1); color: #ffc850; border: 1px solid rgba(255,200,80,0.2); }
+    .type-badge.scan { background: rgba(160,100,255,0.1); color: #b47eff; border: 1px solid rgba(160,100,255,0.2); }
+    .type-card p { font-size: 0.88rem; margin: 0; line-height: 1.65; }
+    .cta-box { background: var(--bg2); border: 1px solid var(--border); padding: 2.5rem; margin: 3rem 0; position: relative; }
+    .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), transparent); }
+    .cta-box h3 { font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+    .cta-box p { color: var(--text); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; background: var(--cyan); color: #06090c; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.25s; border-bottom: none !important; }
+    .btn-primary:hover { background: #33deff; }
+    .btn-secondary { display: inline-flex; align-items: center; border: 1px solid var(--cyan-mid); color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none; transition: background 0.25s; border-bottom: 1px solid var(--cyan-mid) !important; }
+    .btn-secondary:hover { background: var(--cyan-dim); }
+    .sources { background: var(--bg3); border: 1px solid var(--border); padding: 1.8rem; margin-top: 3rem; }
+    .sources h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
+    .sources ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; margin: 0; }
+    .sources li { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .sources a { color: var(--text); border-bottom: 1px solid rgba(0,212,245,0.15); }
+    .related { background: var(--bg2); border-top: 1px solid var(--border); padding: 64px 0; }
+    .related h2 { font-family: 'Orbitron', monospace; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 2rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
+    .related-card { background: var(--bg2); padding: 1.6rem; text-decoration: none; display: block; transition: background 0.2s; }
+    .related-card:hover { background: var(--bg3); }
+    .related-tag { font-family: 'Rajdhani', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.6rem; }
+    .related-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 0.5rem; }
+    .related-card p { font-size: 0.85rem; color: var(--text); line-height: 1.6; }
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 0; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--muted); flex-wrap: wrap; gap: 1rem; }
+    .footer-dot { color: var(--cyan); margin: 0 0.5rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="/" aria-label="ACE AutoLab home">
+        <img src="/logo.png" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/shops.html">For Shops</a></li>
+        <li><a href="/#areas">Service Areas</a></li>
+        <li><a href="/#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="article-hero">
+    <div class="container-narrow">
+      <div class="article-meta">
+        <span class="meta-tag">Reference · All Audiences</span>
+        <span class="meta-date">August 2026</span>
+        <span class="meta-read">· 8 min read</span>
+      </div>
+      <h1>ADAS Calibration Requirements by Manufacturer: What Actually Triggers It</h1>
+      <p class="lead">There is no single calibration standard across the industry. What there are, are patterns — and they hold well enough that you can predict when calibration is needed before you ever open a service manual.</p>
+    </div>
+  </header>
+
+  <main class="article-body">
+    <div class="container-narrow">
+      <article class="article-content">
+
+        <p>The question we hear most often, from drivers and shops alike, is some version of: "Does this specific vehicle actually need calibration?"</p>
+        <p>The honest answer is that it depends on the make, the model, the year, and specifically which repair operation disturbed the sensor. A windshield replacement on one platform may require a short static procedure. The same job on a different platform may require static calibration followed by a highway drive cycle before the system clears.</p>
+        <p>Anyone who hands you a simple table claiming to cover every manufacturer is oversimplifying something that genuinely varies. What we can offer instead is more useful: the patterns that hold across nearly all manufacturers, and the authoritative place to look up the exact answer for any specific vehicle.</p>
+
+        <h2>First, the Scale of This</h2>
+        <p>If you're a shop owner still treating calibration as an occasional edge case, the numbers have moved considerably in the last few years.</p>
+
+        <div class="stat-row">
+          <div class="stat-cell">
+            <div class="stat-num">~90%</div>
+            <div class="stat-label">of model year 2023 vehicles require calibration after windshield replacement</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">~25%</div>
+            <div class="stat-label">was the same figure in 2016</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">65%</div>
+            <div class="stat-label">of collision repairs now require some form of calibration</div>
+          </div>
+        </div>
+
+        <p>In 2016, roughly one in four vehicles needed calibration after a windshield replacement. Today it's closer to nine in ten for recent model years <a href="https://www.safelite.com/resource-center/auto-experts/adas-calibration" target="_blank" rel="noopener">(Safelite)</a>. On the collision side, industry data entering 2026 showed calibration required on about 65% of repairs — a threshold the industry hadn't expected to reach until the end of the year <a href="https://www.caliber.com/insights/2026-timeline" target="_blank" rel="noopener">(Caliber Collision)</a>.</p>
+        <p>Automatic emergency braking is now standard equipment on over 95% of vehicles sold in the US from model year 2023 onward. The direction is one-way: more sensors, on more vehicles, requiring calibration after more types of repair.</p>
+
+        <h2>The Four Patterns That Hold Almost Everywhere</h2>
+        <p>Across manufacturers, four repair categories reliably trigger calibration requirements. If a job falls into one of these, assume calibration is required and verify — rather than assuming it isn't.</p>
+
+        <div class="trigger-list">
+          <div class="trigger-item">
+            <div class="trigger-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="trigger-text">
+              <h4>1. Windshield Replacement</h4>
+              <p>The single most common trigger. The forward-facing camera mounts to the glass or a bracket bonded to it. Replacement changes the seated position by millimeters, and differences in glass curvature, thickness, and refraction alter the optical path. Nearly all major automakers require recalibration after windshield replacement on camera-equipped vehicles.</p>
+            </div>
+          </div>
+          <div class="trigger-item">
+            <div class="trigger-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5.636 18.364a9 9 0 1012.728 0"/><circle cx="12" cy="9" r="3"/></svg></div>
+            <div class="trigger-text">
+              <h4>2. Bumper or Fascia Work</h4>
+              <p>Front and rear radar modules and ultrasonic sensors are commonly mounted behind or inside bumper covers. Removal and reinstallation disturbs their aim, which means recalibration is typically required even when the sensor itself was never replaced.</p>
+            </div>
+          </div>
+          <div class="trigger-item">
+            <div class="trigger-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+            <div class="trigger-text">
+              <h4>3. Alignment, Suspension, and Ride Height Changes</h4>
+              <p>The one that catches shops off guard most often. Ride height changes of only a few millimeters can shift the pitch angle of cameras and radar modules enough to affect detection range. Strut and spring replacement, four-wheel alignment, lift or lowering kits, and air suspension work all fall here.</p>
+            </div>
+          </div>
+          <div class="trigger-item">
+            <div class="trigger-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+            <div class="trigger-text">
+              <h4>4. Sensor or Module Replacement</h4>
+              <p>Replacing a camera, radar unit, or the control module they report to generally requires calibration or at minimum a scan-tool initialization. Some platforms also require a reset after extended battery disconnection.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout warning">
+          <div class="callout-label">The Alignment Blind Spot</div>
+          <p>Most shops associate calibration with collision repair and glass work. But routine suspension and alignment services change the exact geometry ADAS sensors were calibrated against. A vehicle sitting nose-up tilts its forward radar upward, reducing its ability to detect nearby objects — and the vehicle may set no fault code at all.</p>
+          <p>Many OEM calibration procedures now require technicians to verify ride height before beginning calibration, precisely because of this relationship.</p>
+        </div>
+
+        <h2>The Three Calibration Types</h2>
+        <p>When you call a calibration shop, you'll hear these terms. Knowing which one a job needs affects turnaround time and what facilities are required.</p>
+
+        <div class="type-grid">
+          <div class="type-card">
+            <span class="type-badge static">Static</span>
+            <p>Performed indoors with the vehicle parked on a level surface and a manufacturer-specified target positioned at an exact distance. Requires a controlled environment — proper lighting, a certified level floor, and adequate clearance. This is why static calibration cannot be reliably done in a parking lot or driveway.</p>
+          </div>
+          <div class="type-card">
+            <span class="type-badge dynamic">Dynamic</span>
+            <p>Requires driving the vehicle on a road with clear lane markings at a specified speed for a specified distance. The system calibrates using real-world data. Weather, traffic, and road marking quality all affect whether the procedure completes.</p>
+          </div>
+          <div class="type-card">
+            <span class="type-badge scan">Scan-Only</span>
+            <p>Some events require only a scan-tool command — an initialization, angular offset reset, or module write. No target, no drive cycle. This typically applies where a module was replaced but the physical sensor position was never disturbed.</p>
+          </div>
+        </div>
+
+        <p>Many vehicles require a combination. A common sequence is static calibration first, followed by a dynamic drive cycle to confirm. Which combination applies is one of the specifics that genuinely varies by platform.</p>
+
+        <div class="callout">
+          <div class="callout-label">On Scan Tools</div>
+          <p>Not all generic OBD-II scanners can send manufacturer-specific ADAS initialization commands. Dealer-level tools or approved aftermarket equivalents are required to complete the write sequence. A shop running a generic scanner will confirm a connection but cannot complete the calibration.</p>
+        </div>
+
+        <h2>Where the Real Answer Lives</h2>
+        <p>For a vehicle-specific answer, the authoritative resource is <strong>I-CAR's OEM Calibration Requirements Search</strong>, available through the I-CAR Repairability Technical Support (RTS) Portal.</p>
+        <p>It covers 2016-and-newer vehicles and is organized by make, model, and repair event. For each safety system, it shows which cameras and sensors are involved, where they're located, what calibrations are required, whether scan tools or special equipment are needed, and whether the system will set a diagnostic trouble code or illuminate a warning lamp if it detects a problem during pre- or post-repair scanning <a href="https://rts.i-car.com/oem-calibration-requirements-search.html" target="_blank" rel="noopener">(I-CAR RTS)</a>.</p>
+        <p>Two caveats worth knowing. The database does not yet contain every production vehicle sold in the US, and I-CAR notes it should be checked regularly as updates are posted. And for some manufacturers — BMW among them — the results display differently from other makes, so the format isn't perfectly uniform.</p>
+        <p>Beyond I-CAR, the OEM's own service information is the final word. I-CAR's tool is built from those procedures and provides links back to manufacturer repair information.</p>
+
+        <div class="cta-box">
+          <h3>Or Just Call Us</h3>
+          <p>If you'd rather not run a lookup, call ACE AutoLab with the year, make, model, and what was serviced. We'll confirm whether calibration is required and what type before you quote your customer. There's no charge for the question — we'd rather answer it than have a shop guess.</p>
+          <div class="cta-actions">
+            <a href="tel:+15626064140" class="btn-primary">Call (562) 606-4140</a>
+            <a href="/shops.html" class="btn-secondary">Shop Partner Info</a>
+          </div>
+        </div>
+
+        <h2>What Varies Most Between Manufacturers</h2>
+        <p>If the patterns above are the reliable part, here's where the genuine variation sits — the questions worth checking rather than assuming.</p>
+        <ul>
+          <li><strong>Whether alignment triggers calibration, and for which sensors.</strong> Requirements differ between cameras and radar on the same vehicle, and between manufacturers on the same repair.</li>
+          <li><strong>Static versus dynamic versus both.</strong> European platforms more often require both. But this is a tendency, not a rule, and it has shifted as platforms update.</li>
+          <li><strong>Model year cutoffs within the same nameplate.</strong> A vehicle from one model year may have different requirements than the same model two years later, because the ADAS package changed.</li>
+          <li><strong>Trim-level equipment.</strong> Two vehicles that look identical may carry different sensor packages depending on options fitted.</li>
+          <li><strong>Environmental tolerances for static calibration.</strong> Some systems are considerably stricter about floor level, lighting, and clearance than others.</li>
+        </ul>
+
+        <h2>The Practical Rule</h2>
+        <p>For drivers: if your vehicle has any ADAS feature and it's been through glass work, collision repair, alignment, or suspension service, ask whether calibration was performed and request the documentation. The systems can fail silently — a miscalibrated camera often produces no warning light at all, which means the absence of a dashboard alert tells you nothing.</p>
+        <p>For shops: verify before you quote, not after the customer asks. The cost of a lookup or a phone call is zero. The cost of delivering a vehicle with an uncalibrated safety system — and no documentation showing you checked — is a different order of magnitude entirely.</p>
+
+        <div class="sources">
+          <h4>Sources</h4>
+          <ol>
+            <li><a href="https://rts.i-car.com/oem-calibration-requirements-search.html" target="_blank" rel="noopener">I-CAR Repairability Technical Support — OEM Calibration Requirements Search</a></li>
+            <li><a href="https://www.safelite.com/resource-center/auto-experts/adas-calibration" target="_blank" rel="noopener">Safelite — Why You Should Never Skip ADAS Calibration After a Windshield Replacement</a></li>
+            <li><a href="https://www.caliber.com/insights/2026-timeline" target="_blank" rel="noopener">Caliber Collision — Industry Perspective 2026 &amp; Beyond</a></li>
+            <li><a href="https://www.fleetmaintenance.com/equipment/brakes-tire-and-wheel/article/55362808/why-wheel-alignment-is-critical-to-adas-performance" target="_blank" rel="noopener">Fleet Maintenance — Why Wheel Alignment Is Critical to ADAS Performance</a></li>
+            <li><a href="https://rts.i-car.com/crn-2098.html" target="_blank" rel="noopener">I-CAR Repairers Realm — ADAS Calibrations After Wheel Alignment</a></li>
+          </ol>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <section class="related">
+    <div class="container">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        <a href="/blog-windshield-calibration.html" class="related-card">
+          <div class="related-tag">Consumer Guide · ADAS</div>
+          <h3>Does My Car Need Calibration After a Windshield Replacement?</h3>
+          <p>The most common calibration trigger explained — including what happens if you skip it.</p>
+        </a>
+        <a href="/blog-uncalibrated-collision.html" class="related-card">
+          <div class="related-tag">Safety · Liability</div>
+          <h3>What Happens If ADAS Isn't Calibrated After a Collision?</h3>
+          <p>The safety and liability stakes when post-repair calibration is skipped.</p>
+        </a>
+        <a href="/shops.html" class="related-card">
+          <div class="related-tag">For Shops · B2B</div>
+          <h3>Sublet Calibration for Glass &amp; Collision Shops</h3>
+          <p>Wholesale rates, same-day availability, and full documentation — no equipment required.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 ACE AutoLab — Ace Calibration Experts LLC</span>
+        <span>Los Angeles, CA<span class="footer-dot">·</span><a href="/" style="color:var(--muted);text-decoration:none;">aceautolab.com</a></span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const navEl = document.querySelector('.nav-inner');
+    const logoEl = document.getElementById('navLogo');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) { navEl.style.height = '68px'; logoEl.height = 52; }
+      else { navEl.style.height = '100px'; logoEl.height = 90; }
+    });
+  </script>
+</body>
+</html>

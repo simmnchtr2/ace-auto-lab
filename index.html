@@ -171,10 +171,21 @@
 
     /* FOOTER */
     footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
     .footer-brand p { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-top: 0.8rem; max-width: 280px; }
-    .footer-col h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    /* GUIDES */
+    .guides { background: var(--bg); }
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
+    .guide-card { background: var(--bg2); padding: 2rem; text-decoration: none; display: flex; flex-direction: column; transition: background 0.25s; position: relative; overflow: hidden; }
+    .guide-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); opacity: 0; transition: opacity 0.3s; }
+    .guide-card:hover { background: var(--bg3); }
+    .guide-card:hover::before { opacity: 1; }
+    .guide-tag { font-family: 'Rajdhani', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.9rem; }
+    .guide-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.08rem; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 0.7rem; }
+    .guide-card p { font-size: 0.89rem; color: var(--text); line-height: 1.65; margin-bottom: 1.2rem; flex-grow: 1; }
+    .guide-link { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); display: flex; align-items: center; gap: 0.4rem; }
+
+    .footer-col h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .footer-col ul a { font-size: 0.88rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
     .footer-col ul a:hover { color: var(--cyan); }
     .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
@@ -212,7 +223,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="/shops.html">For Shops</a></li>
         <li><a href="#process">How It Works</a></li>
-        <li><a href="#areas">Service Areas</a></li>
+        <li><a href="#guides">Guides</a></li>
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
     </div>
@@ -382,6 +393,41 @@
     </div>
   </section>
 
+  <section class="guides" id="guides" aria-labelledby="guides-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <p class="section-eyebrow">Guides &amp; Resources</p>
+        <h2 class="section-title" id="guides-heading">Understanding ADAS Calibration</h2>
+        <p class="section-sub">Plain-English answers to the questions we get most from drivers and shops — sourced from OEM procedures and industry data.</p>
+        <div class="divider-line"></div>
+      </header>
+      <div class="guides-grid">
+
+        <a href="/blog-windshield-calibration.html" class="guide-card reveal">
+          <div class="guide-tag">Consumer Guide</div>
+          <h3>Does My Car Need ADAS Calibration After a Windshield Replacement?</h3>
+          <p>Nearly nine in ten model year 2023 vehicles require it. What's involved, what it costs, and what happens if you skip it.</p>
+          <span class="guide-link">Read the guide →</span>
+        </a>
+
+        <a href="/blog-uncalibrated-collision.html" class="guide-card reveal">
+          <div class="guide-tag">Safety &amp; Liability</div>
+          <h3>What Happens If ADAS Isn't Calibrated After a Collision?</h3>
+          <p>The systems fail silently — often with no warning light. What that means for drivers, and what it means for shop liability.</p>
+          <span class="guide-link">Read the guide →</span>
+        </a>
+
+        <a href="/blog-calibration-requirements.html" class="guide-card reveal">
+          <div class="guide-tag">Reference</div>
+          <h3>ADAS Calibration Requirements: What Actually Triggers It</h3>
+          <p>Four repair categories reliably require calibration across almost every manufacturer. Here they are — plus where to look up any specific vehicle.</p>
+          <span class="guide-link">Read the guide →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact" aria-labelledby="contact-heading">
     <div class="container">
       <div class="contact-grid">
@@ -472,6 +518,14 @@
             <li><a href="#areas">Service Areas</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="mailto:info@aceautolab.com">info@aceautolab.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/blog-windshield-calibration.html">Windshield Calibration</a></li>
+            <li><a href="/blog-uncalibrated-collision.html">Post-Collision Calibration</a></li>
+            <li><a href="/blog-calibration-requirements.html">Calibration Requirements</a></li>
           </ul>
         </div>
       </div>
