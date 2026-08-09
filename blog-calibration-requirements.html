@@ -94,10 +94,10 @@
     .cta-box h3 { font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
     .cta-box p { color: var(--text); font-size: 0.95rem; margin-bottom: 1.5rem; }
     .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { display: inline-flex; align-items: center; background: var(--cyan); color: #06090c; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.25s; border-bottom: none !important; }
-    .btn-primary:hover { background: #33deff; }
-    .btn-secondary { display: inline-flex; align-items: center; border: 1px solid var(--cyan-mid); color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none; transition: background 0.25s; border-bottom: 1px solid var(--cyan-mid) !important; }
-    .btn-secondary:hover { background: var(--cyan-dim); }
+    .btn-primary { display: inline-flex; align-items: center; background: var(--cyan); color: #06090c !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: none !important; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; }
+    .btn-primary:hover { background: #33deff; box-shadow: 0 0 24px rgba(0,212,245,0.45); color: #06090c !important; }
+    .btn-secondary { display: inline-flex; align-items: center; border: 1px solid var(--cyan-mid) !important; color: var(--cyan) !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: 1px solid var(--cyan-mid) !important; transition: background 0.25s; }
+    .btn-secondary:hover { background: var(--cyan-dim); color: var(--cyan) !important; }
     .sources { background: var(--bg3); border: 1px solid var(--border); padding: 1.8rem; margin-top: 3rem; }
     .sources h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
     .sources ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; margin: 0; }
@@ -312,8 +312,8 @@
           <h3>Or Just Call Us</h3>
           <p>If you'd rather not run a lookup, call ACE AutoLab with the year, make, model, and what was serviced. We'll confirm whether calibration is required and what type before you quote your customer. There's no charge for the question — we'd rather answer it than have a shop guess.</p>
           <div class="cta-actions">
-            <a href="tel:+15626064140" class="btn-primary">Call (562) 606-4140</a>
-            <a href="/shops.html" class="btn-secondary">Shop Partner Info</a>
+            <a href="/shops.html" class="btn-primary">Shop Partner Info</a>
+            <a href="tel:+15626064140" class="btn-secondary">Call (562) 606-4140</a>
           </div>
         </div>
 
