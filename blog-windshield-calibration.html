@@ -60,7 +60,9 @@
     .article-content h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.04em; color: var(--white); margin: 2rem 0 0.6rem; }
     .article-content p { color: var(--text); margin-bottom: 1.2rem; line-height: 1.8; font-size: 0.98rem; }
     .article-content strong { color: var(--white); font-weight: 500; }
-    .article-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-dim); transition: border-color 0.2s; }
+    .article-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-dim); transition: border-color 0.2s, color 0.2s; }
+    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(0,212,245,0.12); border: 1px solid rgba(0,212,245,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
+    .article-content a[href^="tel"]:hover { background: rgba(0,212,245,0.2); border-color: var(--cyan); color: var(--white); }
     .article-content a:hover { border-color: var(--cyan); }
     .article-content ul, .article-content ol { padding-left: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
     .article-content li { color: var(--text); font-size: 0.98rem; line-height: 1.7; }
