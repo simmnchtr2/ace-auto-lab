@@ -29,7 +29,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: #06090c; color: #d8e8f0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-    :root { --cyan: #00A86B; --cyan-dim: rgba(0,212,245,0.12); --cyan-mid: rgba(0,212,245,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(0,212,245,0.1); --muted: #4a6070; --text: #a0b8c8; }
+    :root { --cyan: #00A86B; --cyan-dim: rgba(15,138,95,0.12); --cyan-mid: rgba(15,138,95,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(15,138,95,0.1); --muted: #4a6070; --text: #a0b8c8; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
     .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,9,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); overflow: visible; }
@@ -40,7 +40,7 @@
     .nav-cta { background: var(--cyan) !important; color: #06090c !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
     @media (max-width: 900px) { .nav-links { display: none; } }
     .article-hero { padding: 160px 0 64px; background: var(--bg); position: relative; border-bottom: 1px solid var(--border); }
-    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 64px 64px; }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.03) 1px, transparent 1px); background-size: 64px 64px; }
     .article-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; }
     .meta-tag { font-family: 'Rajdhani', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--cyan-dim); padding: 0.2rem 0.7rem; }
     .meta-date { font-size: 0.82rem; color: var(--muted); }
@@ -52,8 +52,8 @@
     .article-content p { color: var(--text); margin-bottom: 1.2rem; line-height: 1.8; font-size: 0.98rem; }
     .article-content strong { color: var(--white); font-weight: 500; }
     .article-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-dim); transition: border-color 0.2s, color 0.2s; }
-    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(0,212,245,0.12); border: 1px solid rgba(0,212,245,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
-    .article-content a[href^="tel"]:hover { background: rgba(0,212,245,0.2); border-color: var(--cyan); color: var(--white); }
+    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(15,138,95,0.12); border: 1px solid rgba(15,138,95,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
+    .article-content a[href^="tel"]:hover { background: rgba(15,138,95,0.2); border-color: var(--cyan); color: var(--white); }
     .article-content a:hover { border-color: var(--cyan); }
     .article-content ul, .article-content ol { padding-left: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
     .article-content li { color: var(--text); font-size: 0.98rem; line-height: 1.7; }
@@ -77,13 +77,13 @@
     .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.8rem 0 2.5rem; }
     .type-card { background: var(--bg2); padding: 1.5rem; }
     .type-badge { display: inline-block; font-family: 'Rajdhani', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.2rem 0.6rem; margin-bottom: 0.8rem; }
-    .type-badge.static { background: rgba(0,212,245,0.1); color: var(--cyan); border: 1px solid var(--cyan-dim); }
+    .type-badge.static { background: rgba(15,138,95,0.1); color: var(--cyan); border: 1px solid var(--cyan-dim); }
     .type-badge.dynamic { background: rgba(255,200,80,0.1); color: #ffc850; border: 1px solid rgba(255,200,80,0.2); }
     .type-badge.scan { background: rgba(160,100,255,0.1); color: #b47eff; border: 1px solid rgba(160,100,255,0.2); }
     .type-card p { font-size: 0.88rem; margin: 0; line-height: 1.65; }
 
     .caldiag { border: 1px solid var(--border); background: var(--bg3); padding: 1.5rem 0.8rem; margin: 2rem 0; position: relative; overflow: hidden; }
-    .caldiag::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 36px 36px; pointer-events: none; }
+    .caldiag::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.03) 1px, transparent 1px); background-size: 36px 36px; pointer-events: none; }
     .caldiag svg { display: block; width: 100%; height: auto; position: relative; }
     .cd-head { font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 600; fill: #eef4f8; letter-spacing: 0.04em; }
     .cd-sub { font-family: 'Inter', sans-serif; font-size: 10.5px; fill: #7d97a8; }
@@ -95,14 +95,14 @@
     .cta-box p { color: var(--text); font-size: 0.95rem; margin-bottom: 1.5rem; }
     .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary { display: inline-flex; align-items: center; background: var(--cyan); color: #06090c !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: none !important; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; }
-    .btn-primary:hover { background: #33deff; box-shadow: 0 0 24px rgba(0,212,245,0.45); color: #06090c !important; }
+    .btn-primary:hover { background: #2ED18C; box-shadow: 0 0 24px rgba(15,138,95,0.45); color: #06090c !important; }
     .btn-secondary { display: inline-flex; align-items: center; border: 1px solid var(--cyan-mid) !important; color: var(--cyan) !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: 1px solid var(--cyan-mid) !important; transition: background 0.25s; }
     .btn-secondary:hover { background: var(--cyan-dim); color: var(--cyan) !important; }
     .sources { background: var(--bg3); border: 1px solid var(--border); padding: 1.8rem; margin-top: 3rem; }
     .sources h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
     .sources ol { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; margin: 0; }
     .sources li { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-    .sources a { color: var(--text); border-bottom: 1px solid rgba(0,212,245,0.15); }
+    .sources a { color: var(--text); border-bottom: 1px solid rgba(15,138,95,0.15); }
     .related { background: var(--bg2); border-top: 1px solid var(--border); padding: 64px 0; }
     .related h2 { font-family: 'Orbitron', monospace; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 2rem; }
     .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
@@ -120,7 +120,7 @@
   <nav>
     <div class="container nav-inner">
       <a href="/" aria-label="ACE AutoLab home">
-        <img src="/logo.png" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
+        <img src="/ace-autolab-logo-dark.svg" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
       </a>
       <ul class="nav-links">
         <li><a href="/#services">Services</a></li>
@@ -237,24 +237,24 @@
             <desc id="cdD">Static calibration uses a target board in a controlled indoor bay. Dynamic calibration requires driving on marked roads. Scan-only calibration requires a diagnostic tool command with no target or drive cycle.</desc>
 
             <!-- ============ STATIC ============ -->
-            <text class="cd-tag" x="120" y="26" text-anchor="middle" fill="#00d4f5">Static</text>
-            <rect x="24" y="40" width="192" height="150" fill="none" stroke="rgba(0,212,245,0.18)" stroke-width="1"/>
+            <text class="cd-tag" x="120" y="26" text-anchor="middle" fill="#0F8A5F">Static</text>
+            <rect x="24" y="40" width="192" height="150" fill="none" stroke="rgba(15,138,95,0.18)" stroke-width="1"/>
             <!-- floor line -->
             <line x1="40" y1="168" x2="200" y2="168" stroke="#1d3543" stroke-width="1.5"/>
             <!-- car (side, simplified) -->
             <path d="M56 168 L56 146 Q58 138 70 136 L84 118 Q88 114 96 114 L124 114 Q132 114 136 120 L146 136 Q156 139 156 148 L156 168 Z" fill="#0d151c" stroke="#24404f" stroke-width="1.5"/>
             <circle cx="76" cy="168" r="8" fill="#0a1017" stroke="#24404f" stroke-width="1.5"/>
             <circle cx="138" cy="168" r="8" fill="#0a1017" stroke="#24404f" stroke-width="1.5"/>
-            <circle cx="98" cy="126" r="3.5" fill="#00d4f5"/>
+            <circle cx="98" cy="126" r="3.5" fill="#0F8A5F"/>
             <!-- beam to target -->
-            <path d="M101 126 L182 108 L182 150 L101 128 Z" fill="rgba(0,212,245,0.10)"/>
+            <path d="M101 126 L182 108 L182 150 L101 128 Z" fill="rgba(15,138,95,0.10)"/>
             <!-- target board -->
-            <line x1="184" y1="86" x2="184" y2="172" stroke="#00d4f5" stroke-width="2"/>
-            <rect x="172" y="96" width="24" height="60" fill="#0b1219" stroke="#00d4f5" stroke-width="1.2"/>
-            <rect x="177" y="102" width="6" height="6" fill="#00d4f5"/><rect x="186" y="108" width="6" height="6" fill="#00d4f5"/>
-            <rect x="177" y="114" width="6" height="6" fill="#00d4f5"/><rect x="186" y="120" width="6" height="6" fill="#00d4f5"/>
-            <rect x="177" y="126" width="6" height="6" fill="#00d4f5"/><rect x="186" y="132" width="6" height="6" fill="#00d4f5"/>
-            <rect x="177" y="138" width="6" height="6" fill="#00d4f5"/><rect x="186" y="144" width="6" height="6" fill="#00d4f5"/>
+            <line x1="184" y1="86" x2="184" y2="172" stroke="#0F8A5F" stroke-width="2"/>
+            <rect x="172" y="96" width="24" height="60" fill="#0b1219" stroke="#0F8A5F" stroke-width="1.2"/>
+            <rect x="177" y="102" width="6" height="6" fill="#0F8A5F"/><rect x="186" y="108" width="6" height="6" fill="#0F8A5F"/>
+            <rect x="177" y="114" width="6" height="6" fill="#0F8A5F"/><rect x="186" y="120" width="6" height="6" fill="#0F8A5F"/>
+            <rect x="177" y="126" width="6" height="6" fill="#0F8A5F"/><rect x="186" y="132" width="6" height="6" fill="#0F8A5F"/>
+            <rect x="177" y="138" width="6" height="6" fill="#0F8A5F"/><rect x="186" y="144" width="6" height="6" fill="#0F8A5F"/>
             <text class="cd-head" x="120" y="216" text-anchor="middle">Target Board, Indoors</text>
             <text class="cd-sub" x="120" y="236" text-anchor="middle">Level floor, controlled lighting,</text>
             <text class="cd-sub" x="120" y="251" text-anchor="middle">exact measured distance</text>

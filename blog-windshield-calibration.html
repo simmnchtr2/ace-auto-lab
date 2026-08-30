@@ -30,7 +30,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: #06090c; color: #d8e8f0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-    :root { --cyan: #00A86B; --cyan-dim: rgba(0,212,245,0.12); --cyan-mid: rgba(0,212,245,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(0,212,245,0.1); --muted: #4a6070; --text: #a0b8c8; }
+    :root { --cyan: #00A86B; --cyan-dim: rgba(15,138,95,0.12); --cyan-mid: rgba(15,138,95,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(15,138,95,0.1); --muted: #4a6070; --text: #a0b8c8; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
     .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
@@ -41,12 +41,12 @@
     .nav-links a { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--cyan); }
     .nav-cta { background: var(--cyan) !important; color: #06090c !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
-    .nav-cta:hover { background: #33deff !important; }
+    .nav-cta:hover { background: #2ED18C !important; }
     @media (max-width: 900px) { .nav-links { display: none; } }
 
     /* HERO */
     .article-hero { padding: 160px 0 64px; background: var(--bg); position: relative; border-bottom: 1px solid var(--border); }
-    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 64px 64px; }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.03) 1px, transparent 1px); background-size: 64px 64px; }
     .article-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; }
     .meta-tag { font-family: 'Rajdhani', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--cyan-dim); padding: 0.2rem 0.7rem; }
     .meta-date { font-size: 0.82rem; color: var(--muted); }
@@ -61,8 +61,8 @@
     .article-content p { color: var(--text); margin-bottom: 1.2rem; line-height: 1.8; font-size: 0.98rem; }
     .article-content strong { color: var(--white); font-weight: 500; }
     .article-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-dim); transition: border-color 0.2s, color 0.2s; }
-    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(0,212,245,0.12); border: 1px solid rgba(0,212,245,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
-    .article-content a[href^="tel"]:hover { background: rgba(0,212,245,0.2); border-color: var(--cyan); color: var(--white); }
+    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(15,138,95,0.12); border: 1px solid rgba(15,138,95,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
+    .article-content a[href^="tel"]:hover { background: rgba(15,138,95,0.2); border-color: var(--cyan); color: var(--white); }
     .article-content a:hover { border-color: var(--cyan); }
     .article-content ul, .article-content ol { padding-left: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
     .article-content li { color: var(--text); font-size: 0.98rem; line-height: 1.7; }
@@ -79,7 +79,7 @@
     .table-wrap { overflow-x: auto; margin: 2rem 0; }
     table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
     th { font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan); background: var(--bg3); padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-    td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(0,212,245,0.05); color: var(--text); }
+    td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(15,138,95,0.05); color: var(--text); }
     tr:hover td { background: var(--bg2); }
 
     /* CTA BOX */
@@ -89,7 +89,7 @@
     .cta-box p { color: var(--text); font-size: 0.95rem; margin-bottom: 1.5rem; }
     .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--cyan); color: #06090c !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: none !important; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; }
-    .btn-primary:hover { background: #33deff; box-shadow: 0 0 24px rgba(0,212,245,0.45); color: #06090c !important; }
+    .btn-primary:hover { background: #2ED18C; box-shadow: 0 0 24px rgba(15,138,95,0.45); color: #06090c !important; }
     .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--cyan-mid) !important; color: var(--cyan) !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: 1px solid var(--cyan-mid) !important; transition: background 0.25s; }
     .btn-secondary:hover { background: var(--cyan-dim); color: var(--cyan) !important; }
 
@@ -114,7 +114,7 @@
   <nav>
     <div class="container nav-inner">
       <a href="/" aria-label="ACE AutoLab home">
-        <img src="/logo.png" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
+        <img src="/ace-autolab-logo-dark.svg" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
       </a>
       <ul class="nav-links">
         <li><a href="/#services">Services</a></li>
@@ -220,8 +220,8 @@
         <h2>The Short Version</h2>
         <p>If your vehicle has any ADAS features and you've had the windshield replaced, calibration is not optional — it's the step that makes those safety systems actually work. The procedure is straightforward, takes less than two hours, and the documentation protects you if questions come up later with your insurer. Skipping it to save time or money is a trade-off that rarely makes sense when the systems at stake are the ones designed to prevent accidents.</p>
 
-        <div style="background:#0c1219;border:1px solid rgba(0,212,245,0.1);padding:1.8rem;margin-top:3rem;">
-          <h4 style="font-family:'Rajdhani',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#00d4f5;margin-bottom:1rem;">Sources</h4>
+        <div style="background:#0c1219;border:1px solid rgba(15,138,95,0.1);padding:1.8rem;margin-top:3rem;">
+          <h4 style="font-family:'Rajdhani',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#0F8A5F;margin-bottom:1rem;">Sources</h4>
           <ol style="padding-left:1.2rem;display:flex;flex-direction:column;gap:0.5rem;margin:0;">
             <li style="font-size:0.82rem;color:#4a6070;line-height:1.6;"><a href="https://rts.i-car.com/oem-calibration-requirements-search.html" target="_blank" rel="noopener" style="color:#a0b8c8;">I-CAR Repairability Technical Support — OEM Calibration Requirements Search</a></li>
             <li style="font-size:0.82rem;color:#4a6070;line-height:1.6;"><a href="https://www.safelite.com/resource-center/auto-experts/adas-calibration" target="_blank" rel="noopener" style="color:#a0b8c8;">Safelite — Why You Should Never Skip ADAS Calibration After a Windshield Replacement</a></li>

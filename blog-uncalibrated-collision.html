@@ -29,7 +29,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: #06090c; color: #d8e8f0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-    :root { --cyan: #00A86B; --cyan-dim: rgba(0,212,245,0.12); --cyan-mid: rgba(0,212,245,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(0,212,245,0.1); --muted: #4a6070; --text: #a0b8c8; }
+    :root { --cyan: #00A86B; --cyan-dim: rgba(15,138,95,0.12); --cyan-mid: rgba(15,138,95,0.35); --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219; --border: rgba(15,138,95,0.1); --muted: #4a6070; --text: #a0b8c8; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
     .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,9,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); overflow: visible; }
@@ -40,7 +40,7 @@
     .nav-cta { background: var(--cyan) !important; color: #06090c !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
     @media (max-width: 900px) { .nav-links { display: none; } }
     .article-hero { padding: 160px 0 64px; background: var(--bg); position: relative; border-bottom: 1px solid var(--border); }
-    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 64px 64px; }
+    .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.03) 1px, transparent 1px); background-size: 64px 64px; }
     .article-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; }
     .meta-tag { font-family: 'Rajdhani', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--cyan-dim); padding: 0.2rem 0.7rem; }
     .meta-date { font-size: 0.82rem; color: var(--muted); }
@@ -52,8 +52,8 @@
     .article-content p { color: var(--text); margin-bottom: 1.2rem; line-height: 1.8; font-size: 0.98rem; }
     .article-content strong { color: var(--white); font-weight: 500; }
     .article-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-dim); transition: border-color 0.2s, color 0.2s; }
-    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(0,212,245,0.12); border: 1px solid rgba(0,212,245,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
-    .article-content a[href^="tel"]:hover { background: rgba(0,212,245,0.2); border-color: var(--cyan); color: var(--white); }
+    .article-content a[href^="tel"] { color: var(--white); border-bottom: none; font-weight: 600; background: rgba(15,138,95,0.12); border: 1px solid rgba(15,138,95,0.3); padding: 0.15rem 0.55rem; border-radius: 2px; }
+    .article-content a[href^="tel"]:hover { background: rgba(15,138,95,0.2); border-color: var(--cyan); color: var(--white); }
     .article-content a:hover { border-color: var(--cyan); }
     .article-content ul, .article-content ol { padding-left: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
     .article-content li { color: var(--text); font-size: 0.98rem; line-height: 1.7; }
@@ -69,7 +69,7 @@
     .cta-box p { color: var(--text); font-size: 0.95rem; margin-bottom: 1.5rem; }
     .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary { display: inline-flex; align-items: center; background: var(--cyan); color: #06090c !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: none !important; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; }
-    .btn-primary:hover { background: #33deff; box-shadow: 0 0 24px rgba(0,212,245,0.45); color: #06090c !important; }
+    .btn-primary:hover { background: #2ED18C; box-shadow: 0 0 24px rgba(15,138,95,0.45); color: #06090c !important; }
     .btn-secondary { display: inline-flex; align-items: center; border: 1px solid var(--cyan-mid) !important; color: var(--cyan) !important; font-family: 'Rajdhani', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.8rem 1.6rem; text-decoration: none !important; border-bottom: 1px solid var(--cyan-mid) !important; transition: background 0.25s; }
     .btn-secondary:hover { background: var(--cyan-dim); color: var(--cyan) !important; }
     .related { background: var(--bg2); border-top: 1px solid var(--border); padding: 64px 0; }
@@ -89,7 +89,7 @@
   <nav>
     <div class="container nav-inner">
       <a href="/" aria-label="ACE AutoLab home">
-        <img src="/logo.png" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
+        <img src="/ace-autolab-logo-dark.svg" alt="ACE AutoLab" id="navLogo" height="90" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
       </a>
       <ul class="nav-links">
         <li><a href="/#services">Services</a></li>
@@ -192,8 +192,8 @@
         <p>For shops: calibration documentation is no longer a nice-to-have. It's the paperwork that separates a defensible repair from a liability. Whether you handle it in-house or through a sublet partner, the document needs to exist and stay on file. The cost of producing it is a fraction of the cost of defending a claim without it.</p>
         <p>If you want to verify the requirement for a specific vehicle, <strong>I-CAR's OEM Calibration Requirements Search</strong> covers 2016-and-newer vehicles by make, model, and repair event. We've also written about <a href="/blog-calibration-requirements.html">the patterns behind calibration requirements</a> across manufacturers.</p>
 
-        <div style="background:#0c1219;border:1px solid rgba(0,212,245,0.1);padding:1.8rem;margin-top:3rem;">
-          <h4 style="font-family:'Rajdhani',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#00d4f5;margin-bottom:1rem;">Sources</h4>
+        <div style="background:#0c1219;border:1px solid rgba(15,138,95,0.1);padding:1.8rem;margin-top:3rem;">
+          <h4 style="font-family:'Rajdhani',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#0F8A5F;margin-bottom:1rem;">Sources</h4>
           <ol style="padding-left:1.2rem;display:flex;flex-direction:column;gap:0.5rem;margin:0;">
             <li style="font-size:0.82rem;color:#4a6070;line-height:1.6;"><a href="https://rts.i-car.com/oem-calibration-requirements-search.html" target="_blank" rel="noopener" style="color:#a0b8c8;">I-CAR Repairability Technical Support — OEM Calibration Requirements Search</a></li>
             <li style="font-size:0.82rem;color:#4a6070;line-height:1.6;"><a href="https://www.caliber.com/insights/2026-timeline" target="_blank" rel="noopener" style="color:#a0b8c8;">Caliber Collision — Industry Perspective 2026 &amp; Beyond</a></li>
