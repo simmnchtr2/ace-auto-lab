@@ -46,9 +46,9 @@
     html { scroll-behavior: smooth; }
     body { background: #06090c; color: #d8e8f0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
     :root {
-      --cyan: #00A86B; --cyan-dim: rgba(0,212,245,0.12); --cyan-mid: rgba(0,212,245,0.35);
+      --cyan: #0F8A5F; --cyan-dim: rgba(15,138,95,0.12); --cyan-mid: rgba(15,138,95,0.35);
       --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219;
-      --border: rgba(0,212,245,0.1); --muted: #4a6070; --text: #a0b8c8;
+      --border: rgba(15,138,95,0.1); --muted: #4a6070; --text: #a0b8c8;
     }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
@@ -56,27 +56,27 @@
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,9,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); overflow: visible; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 160px; transition: height 0.4s ease; }
     .nav-logo { display: flex; flex-direction: column; line-height: 1; text-decoration: none; }
-    .nav-logo-ace { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.15em; background: linear-gradient(135deg, #fff 0%, #b0c8d8 50%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-ace { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.15em; background: linear-gradient(135deg, #fff 0%, #a0b8c8 50%, #fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-logo-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.58rem; letter-spacing: 0.35em; color: var(--cyan); text-transform: uppercase; margin-top: 2px; }
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
     .nav-links a { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--cyan); }
-    .nav-cta { background: var(--cyan) !important; color: #06090c !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
-    .nav-cta:hover { background: #33deff !important; box-shadow: 0 0 20px rgba(0,212,245,0.4); }
+    .nav-cta { background: var(--cyan) !important; color: #FFFFFF !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
+    .nav-cta:hover { background: #2ED18C !important; box-shadow: 0 0 20px rgba(15,138,95,0.4); }
 
     /* HERO */
     .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 160px; }
-    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.035) 1px, transparent 1px); background-size: 64px 64px; }
-    .hero-glow { position: absolute; width: 800px; height: 800px; top: 50%; left: 55%; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(0,212,245,0.07) 0%, transparent 65%); pointer-events: none; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.035) 1px, transparent 1px); background-size: 64px 64px; }
+    .hero-glow { position: absolute; width: 800px; height: 800px; top: 50%; left: 55%; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(15,138,95,0.07) 0%, transparent 65%); pointer-events: none; }
     .hero-content { position: relative; z-index: 2; max-width: 680px; }
     .hero-eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--cyan); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
     .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--cyan); }
     .hero h1 { font-family: 'Orbitron', monospace; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem; }
-    .hero h1 span { background: linear-gradient(90deg, var(--cyan), #60efff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero h1 span { color: var(--cyan); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .hero-sub { font-size: 1.1rem; font-weight: 300; color: var(--text); line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3.5rem; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--cyan); color: #06090c; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: box-shadow 0.25s, background 0.25s; }
-    .btn-primary:hover { background: #33deff; box-shadow: 0 0 30px rgba(0,212,245,0.45); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--cyan); color: #FFFFFF; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: box-shadow 0.25s, background 0.25s; }
+    .btn-primary:hover { background: #2ED18C; box-shadow: 0 0 30px rgba(15,138,95,0.45); }
     .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--cyan-mid); color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; transition: background 0.25s; }
     .btn-secondary:hover { background: var(--cyan-dim); }
     .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
@@ -162,11 +162,11 @@
     .field label { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
     .field input, .field select, .field textarea { background: var(--bg2); border: 1px solid var(--border); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.9rem; padding: 0.8rem 1rem; outline: none; transition: border-color 0.25s, background 0.25s; width: 100%; appearance: none; }
     .field input::placeholder, .field textarea::placeholder { color: var(--muted); }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--cyan-mid); background: rgba(0,212,245,0.04); }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--cyan-mid); background: rgba(15,138,95,0.04); }
     .field select option { background: #0c1219; }
     .field textarea { resize: vertical; min-height: 100px; }
-    .form-submit { background: var(--cyan); color: #06090c; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border: none; padding: 1rem 2rem; cursor: pointer; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; align-self: flex-start; }
-    .form-submit:hover { background: #33deff; box-shadow: 0 0 30px rgba(0,212,245,0.4); }
+    .form-submit { background: var(--cyan); color: #FFFFFF; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border: none; padding: 1rem 2rem; cursor: pointer; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; align-self: flex-start; }
+    .form-submit:hover { background: #2ED18C; box-shadow: 0 0 30px rgba(15,138,95,0.4); }
     .form-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
 
     /* FOOTER */
@@ -177,11 +177,11 @@
     /* SENSOR MAP */
     .sensormap { background: var(--bg2); }
     .sensormap-wrap { border: 1px solid var(--border); background: var(--bg3); padding: 2rem 1rem; position: relative; overflow: hidden; }
-    .sensormap-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,245,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,245,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .sensormap-wrap::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
     .sensormap-wrap svg { display: block; width: 100%; height: auto; position: relative; }
     .sm-label-title { font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 600; fill: #eef4f8; letter-spacing: 0.02em; }
     .sm-label-desc { font-family: 'Inter', sans-serif; font-size: 11.5px; fill: #7d97a8; }
-    .sm-caption { font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 500; fill: #00d4f5; letter-spacing: 0.28em; text-transform: uppercase; }
+    .sm-caption { font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 500; fill: #0F8A5F; letter-spacing: 0.28em; text-transform: uppercase; }
     .sm-note { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 1.2rem; font-style: italic; }
     @keyframes smPulse { 0%,100% { opacity: 0.15; r: 13; } 50% { opacity: 0.5; r: 19; } }
     .sm-pulse { animation: smPulse 3s ease-in-out infinite; }
@@ -432,12 +432,12 @@
               <stop offset="100%" stop-color="#0a1017"/>
             </linearGradient>
             <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="rgba(0,212,245,0.10)"/>
-              <stop offset="100%" stop-color="rgba(0,212,245,0.03)"/>
+              <stop offset="0%" stop-color="rgba(15,138,95,0.10)"/>
+              <stop offset="100%" stop-color="rgba(15,138,95,0.03)"/>
             </linearGradient>
             <radialGradient id="coneGrad">
-              <stop offset="0%" stop-color="rgba(0,212,245,0.20)"/>
-              <stop offset="100%" stop-color="rgba(0,212,245,0)"/>
+              <stop offset="0%" stop-color="rgba(15,138,95,0.20)"/>
+              <stop offset="100%" stop-color="rgba(15,138,95,0)"/>
             </radialGradient>
           </defs>
 
@@ -467,63 +467,63 @@
 
           <!-- ============ SENSORS ============ -->
           <!-- 1 forward camera -->
-          <circle class="sm-pulse" cx="460" cy="234" r="13" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="460" cy="234" r="6" fill="#00d4f5"/>
+          <circle class="sm-pulse" cx="460" cy="234" r="13" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="460" cy="234" r="6" fill="#0F8A5F"/>
           <!-- 2 front radar -->
-          <circle class="sm-pulse d1" cx="460" cy="132" r="13" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="460" cy="132" r="6" fill="#00d4f5"/>
+          <circle class="sm-pulse d1" cx="460" cy="132" r="13" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="460" cy="132" r="6" fill="#0F8A5F"/>
           <!-- 3 corner sensors -->
-          <circle class="sm-pulse d2" cx="392" cy="152" r="11" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="392" cy="152" r="5" fill="#00d4f5"/>
-          <circle class="sm-pulse d2" cx="528" cy="152" r="11" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="528" cy="152" r="5" fill="#00d4f5"/>
+          <circle class="sm-pulse d2" cx="392" cy="152" r="11" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="392" cy="152" r="5" fill="#0F8A5F"/>
+          <circle class="sm-pulse d2" cx="528" cy="152" r="11" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="528" cy="152" r="5" fill="#0F8A5F"/>
           <!-- 4 blind spot -->
-          <circle class="sm-pulse d3" cx="380" cy="424" r="11" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="380" cy="424" r="5" fill="#00d4f5"/>
-          <circle class="sm-pulse d3" cx="540" cy="424" r="11" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="540" cy="424" r="5" fill="#00d4f5"/>
+          <circle class="sm-pulse d3" cx="380" cy="424" r="11" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="380" cy="424" r="5" fill="#0F8A5F"/>
+          <circle class="sm-pulse d3" cx="540" cy="424" r="11" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="540" cy="424" r="5" fill="#0F8A5F"/>
           <!-- 5 rear camera -->
-          <circle class="sm-pulse d4" cx="460" cy="472" r="13" fill="#00d4f5" opacity="0.15"/>
-          <circle cx="460" cy="472" r="6" fill="#00d4f5"/>
+          <circle class="sm-pulse d4" cx="460" cy="472" r="13" fill="#0F8A5F" opacity="0.15"/>
+          <circle cx="460" cy="472" r="6" fill="#0F8A5F"/>
 
           <!-- ============ CALLOUTS LEFT ============ -->
           <!-- forward camera -->
-          <path d="M452 234 L300 234 L272 206" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
-          <circle cx="272" cy="206" r="3" fill="#00d4f5"/>
+          <path d="M452 234 L300 234 L272 206" fill="none" stroke="#0F8A5F" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="272" cy="206" r="3" fill="#0F8A5F"/>
           <text class="sm-label-title" x="258" y="196" text-anchor="end">Forward-Facing Camera</text>
           <text class="sm-label-desc" x="258" y="214" text-anchor="end">Lane assist, AEB, traffic sign recognition</text>
           <text class="sm-label-desc" x="258" y="230" text-anchor="end">Disturbed by any windshield replacement</text>
 
           <!-- corner sensors -->
-          <path d="M384 152 L300 152 L272 124" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
-          <circle cx="272" cy="124" r="3" fill="#00d4f5"/>
+          <path d="M384 152 L300 152 L272 124" fill="none" stroke="#0F8A5F" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="272" cy="124" r="3" fill="#0F8A5F"/>
           <text class="sm-label-title" x="258" y="114" text-anchor="end">Corner &amp; Ultrasonic Sensors</text>
           <text class="sm-label-desc" x="258" y="132" text-anchor="end">Park assist, cross-traffic detection</text>
 
           <!-- blind spot -->
-          <path d="M372 424 L300 424 L272 452" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
-          <circle cx="272" cy="452" r="3" fill="#00d4f5"/>
+          <path d="M372 424 L300 424 L272 452" fill="none" stroke="#0F8A5F" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="272" cy="452" r="3" fill="#0F8A5F"/>
           <text class="sm-label-title" x="258" y="446" text-anchor="end">Blind Spot Radar</text>
           <text class="sm-label-desc" x="258" y="464" text-anchor="end">Rear quarter panels &mdash; affected by</text>
           <text class="sm-label-desc" x="258" y="480" text-anchor="end">bumper work and ride height changes</text>
 
           <!-- ============ CALLOUTS RIGHT ============ -->
           <!-- front radar -->
-          <path d="M468 132 L620 132 L648 104" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
-          <circle cx="648" cy="104" r="3" fill="#00d4f5"/>
+          <path d="M468 132 L620 132 L648 104" fill="none" stroke="#0F8A5F" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="648" cy="104" r="3" fill="#0F8A5F"/>
           <text class="sm-label-title" x="662" y="94">Front Radar Module</text>
           <text class="sm-label-desc" x="662" y="112">Adaptive cruise, collision braking</text>
           <text class="sm-label-desc" x="662" y="128">Mounted behind the front fascia</text>
 
           <!-- surround view -->
-          <path d="M566 262 L620 262 L648 234" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
-          <circle cx="648" cy="234" r="3" fill="#00d4f5"/>
+          <path d="M566 262 L620 262 L648 234" fill="none" stroke="#0F8A5F" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="648" cy="234" r="3" fill="#0F8A5F"/>
           <text class="sm-label-title" x="662" y="228">Surround-View Cameras</text>
           <text class="sm-label-desc" x="662" y="246">Mirror-mounted &mdash; 360&deg; parking view</text>
 
           <!-- rear camera -->
-          <path d="M468 472 L620 472 L648 444" fill="none" stroke="#00d4f5" stroke-width="1.2" opacity="0.55"/>
-          <circle cx="648" cy="444" r="3" fill="#00d4f5"/>
+          <path d="M468 472 L620 472 L648 444" fill="none" stroke="#0F8A5F" stroke-width="1.2" opacity="0.55"/>
+          <circle cx="648" cy="444" r="3" fill="#0F8A5F"/>
           <text class="sm-label-title" x="662" y="438">Rear Camera &amp; Park Assist</text>
           <text class="sm-label-desc" x="662" y="456">Reversing camera, rear cross-traffic alert</text>
 
@@ -721,9 +721,9 @@
 
         if (result.success) {
           btn.textContent = 'Request Sent ✓';
-          btn.style.background = '#00ff88';
+          btn.style.background = '#2ED18C';
           note.textContent = "Thanks! We'll be in touch within 1 hour during business hours.";
-          note.style.color = '#00ff88';
+          note.style.color = '#2ED18C';
           form.reset();
         } else {
           throw new Error(result.message);
