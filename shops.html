@@ -11,6 +11,7 @@
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="ADAS Calibration for Shops | ACE AutoLab"/>
   <meta property="og:description" content="Sublet ADAS calibration for glass shops, collision centers, and dealerships across Los Angeles."/>
+  <meta property="og:image" content="https://aceautolab.com/images/technician-camera-target.webp"/>
   <meta property="og:url" content="https://aceautolab.com/shops"/>
   <meta property="og:site_name" content="ACE AutoLab"/>
 
@@ -132,6 +133,16 @@
     .btn-primary:hover { background: #2ED18C; box-shadow: 0 0 30px rgba(15,138,95,0.45); }
     .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--cyan-mid); color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; transition: background 0.25s; }
     .btn-secondary:hover { background: var(--cyan-dim); }
+
+
+    /* HERO PHOTO */
+    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; z-index: 0; }
+    .hero-shade { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.93) 42%, rgba(6,9,12,0.62) 66%, rgba(6,9,12,0.3) 100%),
+        linear-gradient(180deg, rgba(6,9,12,0.55) 0%, rgba(6,9,12,0) 28%, rgba(6,9,12,0) 72%, #06090c 100%); }
+    .hero-grid, .hero-glow { z-index: 1; }
+    @media (max-width: 900px) { .hero-shade { background: linear-gradient(180deg, rgba(6,9,12,0.88) 0%, rgba(6,9,12,0.82) 100%); } }
 
     /* SECTIONS */
     section { padding: 88px 0; }
@@ -274,6 +285,8 @@
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-heading">
+    <img class="hero-photo" src="/images/technician-camera-target.webp" alt="Technician aligning calibration equipment to a target in front of a vehicle" width="1920" height="1084" fetchpriority="high" decoding="async"/>
+    <div class="hero-shade"></div>
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
     <div class="container">
