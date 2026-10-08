@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458378318"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18458378318');
+
+    // Google Ads conversions. Labels get filled in once the conversion actions are created.
+    var ACE_CONVERSIONS = { form: '', phone: '' };
+    function aceConvert(kind) {
+      var label = ACE_CONVERSIONS[kind];
+      if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
+    }
+    // Any tap on a phone number link counts as a phone click
+    document.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a[href^="tel:"]')) aceConvert('phone');
+    });
+  </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ADAS Calibration Requirements by Manufacturer: What Actually Triggers It | ACE AutoLab</title>
