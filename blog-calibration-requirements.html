@@ -15,9 +15,9 @@
       var label = ACE_CONVERSIONS[kind];
       if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
     }
-    // Any tap on a phone number link counts as a phone click
+    // Any tap to call or text counts as a phone click
     document.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('a[href^="tel:"]')) aceConvert('phone');
+      if (e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]')) aceConvert('phone');
     });
   </script>
   <meta charset="UTF-8"/>
@@ -335,8 +335,8 @@
         <p>Beyond I-CAR, the OEM's own service information is the final word. I-CAR's tool is built from those procedures and provides links back to manufacturer repair information.</p>
 
         <div class="cta-box">
-          <h3>Or Just Call Us</h3>
-          <p>If you'd rather not run a lookup, call ACE AutoLab with the year, make, model, and what was serviced. We'll confirm whether calibration is required and what type before you quote your customer. There's no charge for the question — we'd rather answer it than have a shop guess.</p>
+          <h3>Or Just Call or Text Us</h3>
+          <p>If you'd rather not run a lookup, call or text ACE AutoLab with the year, make, model, and what was serviced. We'll confirm whether calibration is required and what type before you quote your customer. There's no charge for the question — we'd rather answer it than have a shop guess.</p>
           <div class="cta-actions">
             <a href="/shops" class="btn-primary">Shop Partner Info</a>
             <a href="tel:+14244844297" class="btn-secondary">Call (424) 484-4297</a>

@@ -15,9 +15,9 @@
       var label = ACE_CONVERSIONS[kind];
       if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
     }
-    // Any tap on a phone number link counts as a phone click
+    // Any tap to call or text counts as a phone click
     document.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('a[href^="tel:"]')) aceConvert('phone');
+      if (e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]')) aceConvert('phone');
     });
   </script>
   <meta charset="UTF-8"/>
@@ -241,7 +241,7 @@
 
         <h2>How to Check Your Specific Vehicle</h2>
         <p>If you want to verify the requirement for your exact year, make, and model, the authoritative resource is <strong>I-CAR's OEM Calibration Requirements Search</strong>, which covers 2016-and-newer vehicles and is built from manufacturer repair procedures <a href="https://rts.i-car.com/oem-calibration-requirements-search.html" target="_blank" rel="noopener">(I-CAR RTS)</a>. It's aimed at repair professionals but is worth knowing exists.</p>
-        <p>Or you can just call us with the year, make, model, and what was serviced. We'll confirm it before you commit to anything — there's no charge for the question. We've written more about <a href="/blog-calibration-requirements">the patterns behind calibration requirements</a> if you want to understand what generally triggers it.</p>
+        <p>Or you can just call or text us with the year, make, model, and what was serviced. We'll confirm it before you commit to anything — there's no charge for the question. We've written more about <a href="/blog-calibration-requirements">the patterns behind calibration requirements</a> if you want to understand what generally triggers it.</p>
 
         <h2>The Short Version</h2>
         <p>If your vehicle has any ADAS features and you've had the windshield replaced, calibration is not optional — it's the step that makes those safety systems actually work. The procedure is straightforward, takes less than two hours, and the documentation protects you if questions come up later with your insurer. Skipping it to save time or money is a trade-off that rarely makes sense when the systems at stake are the ones designed to prevent accidents.</p>

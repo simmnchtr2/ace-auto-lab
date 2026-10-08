@@ -15,9 +15,9 @@
       var label = ACE_CONVERSIONS[kind];
       if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
     }
-    // Any tap on a phone number link counts as a phone click
+    // Any tap to call or text counts as a phone click
     document.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('a[href^="tel:"]')) aceConvert('phone');
+      if (e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]')) aceConvert('phone');
     });
   </script>
   <meta charset="UTF-8"/>
@@ -83,7 +83,7 @@
       "name": "How do I know whether a specific job needs calibration?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As a general rule: if the windshield was replaced, the front bumper came off, the suspension or alignment changed, or a sensor was removed, calibration is likely required. Manufacturer requirements vary considerably, so call us with the year, make, model, and what was serviced and we'll confirm before you quote the customer."
+        "text": "As a general rule: if the windshield was replaced, the front bumper came off, the suspension or alignment changed, or a sensor was removed, calibration is likely required. Manufacturer requirements vary considerably, so call or text us with the year, make, model, and what was serviced and we'll confirm before you quote the customer."
       }
     },
     {
@@ -230,6 +230,8 @@
     .contact-method h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
     .contact-method a, .contact-method p { font-size: 1rem; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .contact-method a:hover { color: var(--cyan); }
+    .contact-method .contact-note { font-size: 0.85rem; color: var(--text); margin-top: 0.35rem; line-height: 1.6; max-width: 340px; }
+    .contact-method .contact-note a { font-size: 0.85rem; color: var(--cyan); font-weight: 500; }
     .lead-form { display: flex; flex-direction: column; gap: 1rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .field { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -320,6 +322,10 @@
           <a href="tel:+14244844297" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             (424) 484-4297
+          </a>
+          <a href="sms:+14244844297" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Text Us
           </a>
         </div>
       </div>
@@ -452,7 +458,7 @@
           <div class="benefit-num">06</div>
           <div>
             <h4>Direct Line to a Tech</h4>
-            <p>Not sure whether a job needs calibration? Call and ask. We'd rather answer the question than have you guess.</p>
+            <p>Not sure whether a job needs calibration? Call or text and ask. We'd rather answer the question than have you guess.</p>
           </div>
         </div>
       </div>
@@ -482,7 +488,7 @@
     <div class="container cta-inner">
       <div>
         <h3>Not sure if a job needs calibration?</h3>
-        <p>Call us with the year, make, model, and what was serviced. We'll tell you straight — no charge for the question.</p>
+        <p>Call or text us with the year, make, model, and what was serviced. We'll tell you straight — no charge for the question.</p>
       </div>
       <a href="tel:+14244844297" class="btn-primary">Call (424) 484-4297</a>
     </div>
@@ -507,7 +513,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q">How do I know whether a specific job needs calibration? <span class="plus">+</span></button>
-          <div class="faq-a"><p>As a general rule: if the windshield was replaced, the front bumper came off, the suspension or alignment changed, or a sensor was removed, calibration is likely required. Manufacturer requirements vary considerably, so call us with the year, make, model, and what was serviced and we'll confirm before you quote the customer.</p></div>
+          <div class="faq-a"><p>As a general rule: if the windshield was replaced, the front bumper came off, the suspension or alignment changed, or a sensor was removed, calibration is likely required. Manufacturer requirements vary considerably, so call or text us with the year, make, model, and what was serviced and we'll confirm before you quote the customer.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">What documentation comes back with the vehicle? <span class="plus">+</span></button>
@@ -539,7 +545,7 @@
           <div class="contact-info">
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-              <div><h4>Direct Line</h4><a href="tel:+14244844297">(424) 484-4297</a></div>
+              <div><h4>Call or Text</h4><a href="tel:+14244844297">(424) 484-4297</a><p class="contact-note">Text us anytime and we'll get back to you as soon as possible. <a href="sms:+14244844297">Send a text →</a></p></div>
             </div>
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -547,7 +553,7 @@
             </div>
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><h4>Business Hours</h4><p>Monday – Friday: 8:00 AM – 6:00 PM</p></div>
+              <div><h4>Business Hours</h4><p>Monday – Friday: 9:30 AM – 6:30 PM<br/>Saturday: 9:00 AM – 2:00 PM</p></div>
             </div>
           </div>
         </div>
@@ -698,7 +704,7 @@
       } catch(err) {
         btn.textContent = 'Request Partner Pricing →';
         btn.disabled = false;
-        note.textContent = 'Something went wrong. Please call us directly at (424) 484-4297.';
+        note.textContent = 'Something went wrong. Please call or text us at (424) 484-4297.';
         note.style.color = '#ff6060';
       }
     });

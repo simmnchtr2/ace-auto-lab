@@ -15,9 +15,9 @@
       var label = ACE_CONVERSIONS[kind];
       if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
     }
-    // Any tap on a phone number link counts as a phone click
+    // Any tap to call or text counts as a phone click
     document.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('a[href^="tel:"]')) aceConvert('phone');
+      if (e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]')) aceConvert('phone');
     });
   </script>
   <meta charset="UTF-8"/>
@@ -56,7 +56,10 @@
         {"@type":"Offer","itemOffered":{"@type":"Service","name":"Blind Spot Monitoring Calibration"}}
       ]
     },
-    "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:30","closes":"18:30"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}
+    ],
     "priceRange": "$$",
     "image": "https://aceautolab.com/images/hero-adas-calibration-bay.webp",
     "hasMap": "https://maps.app.goo.gl/QfV9Mu175MKZuWGy6",
@@ -193,6 +196,8 @@
     .contact-method h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
     .contact-method a, .contact-method p { font-size: 1rem; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .contact-method a:hover { color: var(--cyan); }
+    .contact-method .contact-note { font-size: 0.85rem; color: var(--text); margin-top: 0.35rem; line-height: 1.6; max-width: 340px; }
+    .contact-method .contact-note a { font-size: 0.85rem; color: var(--cyan); font-weight: 500; }
 
     /* MAP CARD */
     .map-card { display: block; text-decoration: none; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; margin-top: 0.5rem; }
@@ -310,6 +315,10 @@
           <a href="tel:+14244844297" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             Call Now
+          </a>
+          <a href="sms:+14244844297" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Text Us
           </a>
         </div>
         <div class="hero-stats">
@@ -626,13 +635,13 @@
           <header class="section-header reveal">
             <p class="section-eyebrow">Get In Touch</p>
             <h2 class="section-title" id="contact-heading">Book Your Calibration</h2>
-            <p class="section-sub">Call us, email us, or fill out the form and we'll get back to you within the hour during business hours.</p>
+            <p class="section-sub">Call, text, email, or fill out the form. We reply within the hour during business hours, and you can text us anytime.</p>
             <div class="divider-line"></div>
           </header>
           <div class="contact-info">
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-              <div><h4>Phone</h4><a href="tel:+14244844297">(424) 484-4297</a></div>
+              <div><h4>Call or Text</h4><a href="tel:+14244844297">(424) 484-4297</a><p class="contact-note">Text us anytime and we'll get back to you as soon as possible. <a href="sms:+14244844297">Send a text →</a></p></div>
             </div>
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -640,7 +649,7 @@
             </div>
             <div class="contact-method reveal">
               <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><h4>Business Hours</h4><p>Monday – Friday: 8:00 AM – 6:00 PM</p></div>
+              <div><h4>Business Hours</h4><p>Monday – Friday: 9:30 AM – 6:30 PM<br/>Saturday: 9:00 AM – 2:00 PM</p></div>
             </div>
 
             <!-- Location / Map Card -->
@@ -818,7 +827,7 @@
       } catch(err) {
         btn.textContent = 'Request Appointment →';
         btn.disabled = false;
-        note.textContent = 'Something went wrong. Please call us directly at (424) 484-4297.';
+        note.textContent = 'Something went wrong. Please call or text us at (424) 484-4297.';
         note.style.color = '#ff6060';
       }
     });
