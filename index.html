@@ -37,7 +37,9 @@
       ]
     },
     "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "hasMap": "https://maps.app.goo.gl/QfV9Mu175MKZuWGy6",
+    "sameAs": ["https://maps.app.goo.gl/QfV9Mu175MKZuWGy6"]
   }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -72,7 +74,7 @@
     .hero-eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--cyan); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
     .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--cyan); }
     .hero h1 { font-family: 'Orbitron', monospace; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem; }
-    .hero h1 span { color: var(--cyan); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero h1 span { color: var(--cyan); }
     .hero-sub { font-size: 1.1rem; font-weight: 300; color: var(--text); line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3.5rem; }
     .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--cyan); color: #FFFFFF; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: box-shadow 0.25s, background 0.25s; }
@@ -250,7 +252,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="/shops.html">For Shops</a></li>
+        <li><a href="/shops">For Shops</a></li>
         <li><a href="#process">How It Works</a></li>
         <li><a href="#guides">Guides</a></li>
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
@@ -274,7 +276,7 @@
           </a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Vehicles Calibrated</span></div>
+          <div class="stat"><span class="stat-num">OEM</span><span class="stat-label">Procedures &amp; Targets</span></div>
           <div class="stat-divider"></div>
           <div class="stat"><span class="stat-num">6+</span><span class="stat-label">ADAS Services</span></div>
           <div class="stat-divider"></div>
@@ -324,7 +326,7 @@
         <article class="service-card reveal">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <h3>Windshield Recalibration</h3>
-          <p>Post-replacement camera and sensor recalibration to restore full ADAS functionality after windshield glass service — often required by law.</p>
+          <p>Post-replacement camera and sensor recalibration to restore full ADAS functionality after windshield glass service — a manufacturer requirement on most camera-equipped vehicles.</p>
           <span class="service-tag">Most Common</span>
         </article>
         <article class="service-card reveal">
@@ -558,21 +560,21 @@
       </header>
       <div class="guides-grid">
 
-        <a href="/blog-windshield-calibration.html" class="guide-card reveal">
+        <a href="/blog-windshield-calibration" class="guide-card reveal">
           <div class="guide-tag">Consumer Guide</div>
           <h3>Does My Car Need ADAS Calibration After a Windshield Replacement?</h3>
           <p>Nearly nine in ten model year 2023 vehicles require it. What's involved, what it costs, and what happens if you skip it.</p>
           <span class="guide-link">Read the guide →</span>
         </a>
 
-        <a href="/blog-uncalibrated-collision.html" class="guide-card reveal">
+        <a href="/blog-uncalibrated-collision" class="guide-card reveal">
           <div class="guide-tag">Safety &amp; Liability</div>
           <h3>What Happens If ADAS Isn't Calibrated After a Collision?</h3>
           <p>The systems fail silently — often with no warning light. What that means for drivers, and what it means for shop liability.</p>
           <span class="guide-link">Read the guide →</span>
         </a>
 
-        <a href="/blog-calibration-requirements.html" class="guide-card reveal">
+        <a href="/blog-calibration-requirements" class="guide-card reveal">
           <div class="guide-tag">Reference</div>
           <h3>ADAS Calibration Requirements: What Actually Triggers It</h3>
           <p>Four repair categories reliably require calibration across almost every manufacturer. Here they are — plus where to look up any specific vehicle.</p>
@@ -619,7 +621,7 @@
             </div>
 
             <!-- Clickable Map Card -->
-            <a href="https://maps.google.com/?q=115+E+Gardena+Blvd+Gardena+CA+90248"
+            <a href="https://maps.app.goo.gl/QfV9Mu175MKZuWGy6"
                target="_blank" rel="noopener noreferrer"
                class="map-card reveal"
                aria-label="Open 115 E Gardena Blvd in Google Maps">
@@ -706,7 +708,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="#why">About ACE</a></li>
-            <li><a href="/shops.html">For Shops</a></li>
+            <li><a href="/shops">For Shops</a></li>
             <li><a href="#process">How It Works</a></li>
             <li><a href="#areas">Service Areas</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -716,9 +718,9 @@
         <div class="footer-col">
           <h4>Guides</h4>
           <ul>
-            <li><a href="/blog-windshield-calibration.html">Windshield Calibration</a></li>
-            <li><a href="/blog-uncalibrated-collision.html">Post-Collision Calibration</a></li>
-            <li><a href="/blog-calibration-requirements.html">Calibration Requirements</a></li>
+            <li><a href="/blog-windshield-calibration">Windshield Calibration</a></li>
+            <li><a href="/blog-uncalibrated-collision">Post-Collision Calibration</a></li>
+            <li><a href="/blog-calibration-requirements">Calibration Requirements</a></li>
           </ul>
         </div>
       </div>
