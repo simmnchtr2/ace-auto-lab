@@ -300,7 +300,10 @@
     .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    @media (max-width: 900px) {
+    .nav-links a { white-space: nowrap; }
+    @media (max-width: 1300px) { .nav-links { gap: 1.25rem; } }
+    @media (max-width: 1180px) {
+      .nav-links { display: none; }
       .nav-toggle { display: flex; }
       .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #06090c; border-bottom: 1px solid var(--cyan-mid); padding: 0.5rem 24px 1.25rem; max-height: calc(100vh - 100%); overflow-y: auto; }
       .nav-links.open li { border-bottom: 1px solid var(--border); }
@@ -323,6 +326,7 @@
         <li><a href="/shops">For Shops</a></li>
         <li><a href="#process">How It Works</a></li>
         <li><a href="#guides">Guides</a></li>
+        <li><a href="/faq">FAQ</a></li>
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
@@ -798,6 +802,7 @@
             <li><a href="/shops">For Shops</a></li>
             <li><a href="#process">How It Works</a></li>
             <li><a href="#areas">Service Areas</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="mailto:info@aceautolab.com">info@aceautolab.com</a></li>
           </ul>
@@ -894,7 +899,7 @@
       toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
       menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
-      window.addEventListener('resize', function () { if (window.innerWidth > 900) setOpen(false); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 1180) setOpen(false); });
     })();
   </script>
 </body>
