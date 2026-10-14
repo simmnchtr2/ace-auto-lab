@@ -8,6 +8,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-18458378318');
+    gtag('config', 'G-CG2RCNVFYV');
 
     // Google Ads conversions. Labels get filled in once the conversion actions are created.
     var ACE_CONVERSIONS = { form: 'xNtvCKjw_ZUdEM6A0uFE', phone: 'ee7-CLj4hpYdEM6A0uFE' };
@@ -22,14 +23,18 @@
   </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BMW Coding &amp; Module Programming in Los Angeles | ACE AutoLab</title>
-  <meta name="description" content="Module programming, BMW and MINI coding, retrofits, key and immobilizer programming, DME cloning, and diagnostics in Los Angeles. BMW, MINI, Mercedes-Benz, and exotics. Call or text (424) 484-4297."/>
-  <meta name="keywords" content="BMW coding Los Angeles, module programming Los Angeles, BMW retrofit, NBT Evo retrofit, CarPlay activation BMW, BMW key programming, DME cloning, EWS immobilizer matching, Mercedes key programming, exotic car programming"/>
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <title>Module Programming &amp; Coding in Los Angeles | ACE AutoLab</title>
+  <meta name="description" content="Module programming, coding, retrofits, key and immobilizer programming, and diagnostics for all makes and models in Los Angeles. Call or text for a quote."/>
+  <meta name="keywords" content="module programming Los Angeles, car coding Los Angeles, key programming Los Angeles, immobilizer programming, ECU programming, retrofit coding, used module programming, BMW coding, Mercedes key programming"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://aceautolab.com/programming"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Programming &amp; Coding | ACE AutoLab"/>
-  <meta property="og:description" content="Module programming, coding, retrofits, keys, and diagnostics for BMW, MINI, Mercedes-Benz, and exotics in Los Angeles."/>
+  <meta property="og:title" content="Module Programming &amp; Coding | ACE AutoLab"/>
+  <meta property="og:description" content="Module programming, coding, retrofits, keys, and diagnostics for all makes and models in Los Angeles."/>
   <meta property="og:image" content="https://aceautolab.com/images/hero-adas-calibration-bay.webp"/>
   <meta property="og:url" content="https://aceautolab.com/programming"/>
   <meta property="og:site_name" content="ACE AutoLab"/>
@@ -367,6 +372,20 @@
     .tag-list li { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); background: var(--cyan-dim); border: 1px solid var(--cyan-mid); padding: 0.3rem 0.65rem; }
     .combo { background: var(--bg); }
     @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } }
+      /* MOBILE MENU */
+    .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid var(--cyan-mid); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--white); transition: transform 0.25s, opacity 0.25s; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: flex; }
+      .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #06090c; border-bottom: 1px solid var(--cyan-mid); padding: 0.5rem 24px 1.25rem; max-height: calc(100vh - 100%); overflow-y: auto; }
+      .nav-links.open li { border-bottom: 1px solid var(--border); }
+      .nav-links.open li:last-child { border-bottom: none; padding-top: 1rem; }
+      .nav-links.open a { display: block; padding: 1rem 0; font-size: 1rem; }
+      .nav-links.open a.nav-cta { text-align: center; padding: 0.9rem 1.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -376,13 +395,14 @@
       <a href="/" class="nav-logo" aria-label="ACE AutoLab home">
         <img src="/ace-autolab-logo-dark.svg" alt="ACE AutoLab - Automotive Calibrations" id="navLogo" height="120" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navMenu">
         <li><a href="/#services">Services</a></li>
         <li><a href="/programming" class="active">Programming</a></li>
         <li><a href="/shops">For Shops</a></li>
         <li><a href="/#areas">Service Areas</a></li>
         <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
       </ul>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -795,6 +815,23 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
     }
+  </script>
+  <script>
+    // Mobile menu
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('navMenu');
+      if (!toggle || !menu) return;
+      function setOpen(open) {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 900) setOpen(false); });
+    })();
   </script>
 </body>
 </html>
