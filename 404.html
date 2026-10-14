@@ -10,15 +10,21 @@
     gtag('config', 'AW-18458378318');
     gtag('config', 'G-CG2RCNVFYV');
 
-    // Google Ads conversions. Labels get filled in once the conversion actions are created.
+    // Google Ads conversions
     var ACE_CONVERSIONS = { form: 'xNtvCKjw_ZUdEM6A0uFE', phone: 'ee7-CLj4hpYdEM6A0uFE' };
     function aceConvert(kind) {
       var label = ACE_CONVERSIONS[kind];
       if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
+      // GA4 key event for form submissions
+      if (kind === 'form') gtag('event', 'generate_lead', { send_to: 'G-CG2RCNVFYV', form_page: location.pathname });
     }
-    // Any tap to call or text counts as a phone click
+    // Any tap to call or text counts as a phone click (Google Ads) and is logged separately in GA4
     document.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]')) aceConvert('phone');
+      var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+      if (!link) return;
+      aceConvert('phone');
+      var isText = link.getAttribute('href').indexOf('sms:') === 0;
+      gtag('event', isText ? 'click_to_text' : 'click_to_call', { send_to: 'G-CG2RCNVFYV', link_text: (link.textContent || '').trim().slice(0, 60), page_path: location.pathname });
     });
   </script>
   <meta charset="UTF-8"/>
