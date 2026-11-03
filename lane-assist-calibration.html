@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458378318"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18458378318');
+    gtag('config', 'G-CG2RCNVFYV');
+
+    // Google Ads conversions
+    var ACE_CONVERSIONS = { form: 'xNtvCKjw_ZUdEM6A0uFE', phone: 'ee7-CLj4hpYdEM6A0uFE' };
+    function aceConvert(kind) {
+      var label = ACE_CONVERSIONS[kind];
+      if (label) gtag('event', 'conversion', { send_to: 'AW-18458378318/' + label });
+      // GA4 key event for form submissions
+      if (kind === 'form') gtag('event', 'generate_lead', { send_to: 'G-CG2RCNVFYV', form_page: location.pathname });
+    }
+    // Any tap to call or text counts as a phone click (Google Ads) and is logged separately in GA4
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+      if (!link) return;
+      aceConvert('phone');
+      var isText = link.getAttribute('href').indexOf('sms:') === 0;
+      gtag('event', isText ? 'click_to_text' : 'click_to_call', { send_to: 'G-CG2RCNVFYV', link_text: (link.textContent || '').trim().slice(0, 60), page_path: location.pathname });
+    });
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+  <title>Lane Keep Assist Calibration in Los Angeles | ACE AutoLab</title>
+  <meta name="description" content="Lane departure and lane keep assist calibration in Los Angeles after alignment, suspension, tire, or collision work. OEM procedures and full reports."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://aceautolab.com/lane-assist-calibration"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Lane Keep Assist Calibration in Los Angeles | ACE AutoLab"/>
+  <meta property="og:description" content="Lane departure and lane keep assist calibration in Los Angeles after alignment, suspension, tire, or collision work. OEM procedures and full reports."/>
+  <meta property="og:image" content="https://aceautolab.com/images/technician-camera-target.webp"/>
+  <meta property="og:url" content="https://aceautolab.com/lane-assist-calibration"/>
+  <meta property="og:site_name" content="ACE AutoLab"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Lane Keep Assist Calibration",
+  "name": "Lane Keep Assist Calibration",
+  "url": "https://aceautolab.com/lane-assist-calibration",
+  "description": "Lane departure and lane keep assist calibration in Los Angeles after alignment, suspension, tire, or collision work. OEM procedures and full reports.",
+  "provider": {
+    "@type": "AutoRepair",
+    "name": "ACE AutoLab",
+    "legalName": "Automotive Calibration Experts LLC",
+    "telephone": "+1-424-484-4297",
+    "email": "info@aceautolab.com",
+    "url": "https://aceautolab.com",
+    "sameAs": [
+      "https://maps.app.goo.gl/QfV9Mu175MKZuWGy6",
+      "https://www.yelp.com/biz/ace-autolab-gardena-2",
+      "https://www.instagram.com/aceautolabla/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "115 E Gardena Blvd, Unit 1A",
+      "addressLocality": "Gardena",
+      "addressRegion": "CA",
+      "postalCode": "90248",
+      "addressCountry": "US"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Los Angeles"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need calibration after a wheel alignment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many manufacturers require or recommend it, especially when the alignment changed the thrust angle. Requirements vary by vehicle, so send us the year, make, and model and what was done, and we'll tell you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My car pulls or lane assist tugs the wheel. Is that calibration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can be calibration, alignment, or both. A pre-scan and an alignment check tell us which. If the alignment is out of spec, it should be corrected before calibration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I lowered or lifted my vehicle. Will lane assist still work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ride height changes alter the camera's view of the road and the vehicle's geometry, so recalibration is often needed afterward for the system to work as designed. Very large changes can go beyond what some systems are able to calibrate to."
+      }
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aceautolab.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ADAS Calibration Services",
+      "item": "https://aceautolab.com/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lane Assist Calibration",
+      "item": "https://aceautolab.com/lane-assist-calibration"
+    }
+  ]
+}
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #06090c; color: #d8e8f0; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    :root {
+      --cyan: #0F8A5F; --cyan-dim: rgba(15,138,95,0.12); --cyan-mid: rgba(15,138,95,0.35);
+      --white: #eef4f8; --bg: #06090c; --bg2: #090e13; --bg3: #0c1219;
+      --border: rgba(15,138,95,0.1); --muted: #4a6070; --text: #a0b8c8;
+    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,9,12,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); overflow: visible; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100px; transition: height 0.4s ease; }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a.active { color: var(--cyan); }
+    .nav-cta { background: var(--cyan) !important; color: #06090c !important; font-weight: 600 !important; padding: 0.5rem 1.2rem; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
+    .nav-cta:hover { background: #2ED18C !important; box-shadow: 0 0 20px rgba(15,138,95,0.4); }
+
+    /* HERO */
+    .hero { min-height: 78vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 120px; padding-bottom: 60px; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(15,138,95,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(15,138,95,0.035) 1px, transparent 1px); background-size: 64px 64px; }
+    .hero-glow { position: absolute; width: 800px; height: 800px; top: 50%; left: 60%; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(15,138,95,0.07) 0%, transparent 65%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; max-width: 720px; }
+    .hero-eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--cyan); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--cyan); }
+    .hero h1 { font-family: 'Orbitron', monospace; font-size: clamp(2rem, 4.6vw, 3.4rem); font-weight: 900; line-height: 1.12; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.2rem; }
+    .hero h1 span { background: linear-gradient(90deg, var(--cyan), #4DC99A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 1.1rem; font-weight: 300; color: var(--text); line-height: 1.75; max-width: 560px; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--cyan); color: #06090c; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: box-shadow 0.25s, background 0.25s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #2ED18C; box-shadow: 0 0 30px rgba(15,138,95,0.45); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--cyan-mid); color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 1.8rem; text-decoration: none; transition: background 0.25s; }
+    .btn-secondary:hover { background: var(--cyan-dim); }
+
+
+    /* HERO PHOTO */
+    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; z-index: 0; }
+    .hero-shade { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(6,9,12,0.97) 0%, rgba(6,9,12,0.93) 42%, rgba(6,9,12,0.62) 66%, rgba(6,9,12,0.3) 100%),
+        linear-gradient(180deg, rgba(6,9,12,0.55) 0%, rgba(6,9,12,0) 28%, rgba(6,9,12,0) 72%, #06090c 100%); }
+    .hero-grid, .hero-glow { z-index: 1; }
+    @media (max-width: 900px) { .hero-shade { background: linear-gradient(180deg, rgba(6,9,12,0.88) 0%, rgba(6,9,12,0.82) 100%); } }
+
+    /* SECTIONS */
+    section { padding: 88px 0; }
+    .section-eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Orbitron', monospace; font-size: clamp(1.4rem, 3.2vw, 2.2rem); font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 1rem; }
+    .section-sub { font-size: 1rem; color: var(--text); max-width: 620px; line-height: 1.75; }
+    .section-header { margin-bottom: 3.5rem; }
+    .divider-line { width: 48px; height: 2px; background: var(--cyan); margin: 1rem 0 0; }
+
+    /* PROBLEM */
+    .problem { background: var(--bg2); }
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .problem-card { background: var(--bg3); border: 1px solid var(--border); padding: 2rem; position: relative; }
+    .problem-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #ff6b4a, transparent); }
+    .problem-card h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #ff8a6a; margin-bottom: 1.2rem; }
+    .problem-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    .problem-list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; color: var(--text); line-height: 1.6; }
+    .problem-list li::before { content: '×'; color: #ff8a6a; font-size: 1.1rem; line-height: 1.3; flex-shrink: 0; }
+    .solve-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.5rem; }
+    .solve-list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem; color: var(--text); line-height: 1.6; }
+    .solve-list li svg { width: 16px; height: 16px; color: var(--cyan); flex-shrink: 0; margin-top: 4px; }
+    .solve-list li strong { color: var(--white); font-weight: 500; }
+
+    /* WHO */
+    .who { background: var(--bg); }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
+    .who-card { background: var(--bg2); padding: 2rem; transition: background 0.25s; position: relative; overflow: hidden; }
+    .who-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); opacity: 0; transition: opacity 0.3s; }
+    .who-card:hover { background: var(--bg3); }
+    .who-card:hover::before { opacity: 1; }
+    .who-icon { width: 44px; height: 44px; background: var(--cyan-dim); border: 1px solid var(--cyan-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+    .who-icon svg { width: 20px; height: 20px; color: var(--cyan); }
+    .who-card h3 { font-family: 'Orbitron', monospace; font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+    .who-card p { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
+
+    /* BENEFITS */
+    .benefits { background: var(--bg2); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2.5rem 3rem; }
+    .benefit { display: flex; gap: 1rem; align-items: flex-start; }
+    .benefit-num { font-family: 'Orbitron', monospace; font-size: 0.8rem; font-weight: 700; color: var(--cyan); border: 1px solid var(--cyan-mid); background: var(--cyan-dim); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+    .benefit h4 { font-family: 'Rajdhani', sans-serif; font-size: 1.02rem; font-weight: 600; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.3rem; }
+    .benefit p { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
+
+    /* PROCESS */
+    .process { background: var(--bg); }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 27px; left: 12.5%; right: 12.5%; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan-mid), transparent); }
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.4rem; }
+    .step-num { width: 56px; height: 56px; background: var(--bg2); border: 1px solid var(--cyan-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 700; color: var(--cyan); position: relative; z-index: 1; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
+    .process-step h3 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.85rem; color: var(--text); line-height: 1.6; }
+
+    /* CTA STRIP */
+    .cta-strip { background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3rem 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .cta-inner h3 { font-family: 'Orbitron', monospace; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .cta-inner p { font-size: 0.95rem; color: var(--text); }
+
+    /* FORM */
+    .partner { background: var(--bg); }
+    .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem; }
+    .contact-method { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-icon { width: 44px; height: 44px; flex-shrink: 0; background: var(--cyan-dim); border: 1px solid var(--cyan-mid); display: flex; align-items: center; justify-content: center; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+    .contact-icon svg { width: 18px; height: 18px; color: var(--cyan); }
+    .contact-method h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+    .contact-method a, .contact-method p { font-size: 1rem; color: var(--white); text-decoration: none; transition: color 0.2s; }
+    .contact-method a:hover { color: var(--cyan); }
+    .contact-method .contact-note { font-size: 0.85rem; color: var(--text); margin-top: 0.35rem; line-height: 1.6; max-width: 340px; }
+    .contact-method .contact-note a { font-size: 0.85rem; color: var(--cyan); font-weight: 500; }
+    .lead-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .field label { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
+    .field input, .field select, .field textarea { background: var(--bg2); border: 1px solid var(--border); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.9rem; padding: 0.8rem 1rem; outline: none; transition: border-color 0.25s, background 0.25s; width: 100%; appearance: none; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--cyan-mid); background: rgba(15,138,95,0.04); }
+    .field select option { background: #0c1219; }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .form-submit { background: var(--cyan); color: #06090c; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border: none; padding: 1rem 2rem; cursor: pointer; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: background 0.25s, box-shadow 0.25s; align-self: flex-start; }
+    .form-submit:hover { background: #2ED18C; box-shadow: 0 0 30px rgba(15,138,95,0.4); }
+    .form-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
+
+    /* FAQ */
+    .faq { background: var(--bg2); }
+    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .faq-item { background: var(--bg2); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; color: var(--white); font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; padding: 1.3rem 1.6rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; transition: background 0.2s; }
+    .faq-q:hover { background: var(--bg3); }
+    .faq-q span.plus { color: var(--cyan); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.25s; }
+    .faq-item.open .faq-q span.plus { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-a p { padding: 0 1.6rem 1.4rem; font-size: 0.92rem; color: var(--text); line-height: 1.7; }
+    .faq-item.open .faq-a { max-height: 700px; }
+
+    /* FOOTER */
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-top: 0.8rem; max-width: 280px; }
+    .footer-col h4 { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--cyan); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
+    .footer-dot { color: var(--cyan); margin: 0 0.5rem; }
+
+    @media (max-width: 900px) {
+      .problem-grid, .partner-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .process-steps::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .form-row { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    /* SOCIAL LINKS */
+    .social-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+    .contact-method .social-links { margin-top: 0.45rem; }
+    .social-links a { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.85rem; border: 1px solid var(--cyan-mid); color: var(--text); font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: color 0.2s, background 0.2s, border-color 0.2s; }
+    .social-links a:hover { color: var(--cyan); background: var(--cyan-dim); border-color: var(--cyan); }
+    .social-links svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .footer-bottom .social-links { margin-top: 0; }
+
+    /* PROGRAMMING PAGE */
+    .who-card ul { list-style: none; margin-top: 0.9rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .who-card ul li { font-size: 0.84rem; color: var(--text); padding-left: 1rem; position: relative; line-height: 1.55; }
+    .who-card ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; background: var(--cyan); }
+    .brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .brand-card { background: var(--bg3); border: 1px solid var(--border); padding: 2rem; position: relative; }
+    .brand-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--cyan), transparent); }
+    .brand-card h3 { font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .brand-card .brand-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1.1rem; }
+    .brand-card p { font-size: 0.9rem; color: var(--text); line-height: 1.65; margin-bottom: 1rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; }
+    .tag-list li { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); background: var(--cyan-dim); border: 1px solid var(--cyan-mid); padding: 0.3rem 0.65rem; }
+    .combo { background: var(--bg); }
+    @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } }
+      /* MOBILE MENU */
+    .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid var(--cyan-mid); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--white); transition: transform 0.25s, opacity 0.25s; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-links a { white-space: nowrap; }
+    @media (max-width: 1300px) { .nav-links { gap: 1.25rem; } }
+    @media (max-width: 1180px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #06090c; border-bottom: 1px solid var(--cyan-mid); padding: 0.5rem 24px 1.25rem; max-height: calc(100vh - 100%); overflow-y: auto; }
+      .nav-links.open li { border-bottom: 1px solid var(--border); }
+      .nav-links.open li:last-child { border-bottom: none; padding-top: 1rem; }
+      .nav-links.open a { display: block; padding: 1rem 0; font-size: 1rem; }
+      .nav-links.open a.nav-cta { text-align: center; padding: 0.9rem 1.2rem; }
+    }
+    /* SERVICE PAGES */
+    .prose p { font-size: 1rem; color: var(--text); line-height: 1.8; margin-bottom: 1.1rem; max-width: 620px; }
+    .prose p strong { color: var(--white); font-weight: 500; }
+    .note-box { margin-top: 2.5rem; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); padding: 1.3rem 1.5rem; font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .note-box strong { color: var(--white); font-weight: 500; }
+    .related { background: var(--bg2); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
+    .related-grid a { background: var(--bg2); padding: 1.4rem 1.5rem; text-decoration: none; display: block; transition: background 0.2s; }
+    .related-grid a:hover { background: var(--bg3); }
+    .related-grid strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 1.02rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+    .related-grid span { font-size: 0.85rem; color: var(--text); line-height: 1.55; }
+    .faq-a p a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--cyan-mid); }
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .related-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="ACE AutoLab home">
+        <img src="/ace-autolab-logo-dark.svg" alt="ACE AutoLab - Automotive Calibrations" id="navLogo" height="120" style="display:block; transition: height 0.4s ease; background:#06090c;"/>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="/#services" class="active">Services</a></li>
+        <li><a href="/programming">Programming</a></li>
+        <li><a href="/shops">For Shops</a></li>
+        <li><a href="/#areas">Service Areas</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <img class="hero-photo" src="/images/technician-camera-target.webp" alt="Technician positioning a camera calibration target in front of a vehicle" width="1920" height="1084" fetchpriority="high" decoding="async"/>
+    <div class="hero-shade"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Lane Departure &amp; Lane Keep</div>
+        <h1 id="hero-heading">Lane Assist<br/><span>Calibration</span><br/>in Los Angeles</h1>
+        <p class="hero-sub">Lane departure warning and lane keep assist depend on the front camera knowing exactly which way the car is pointed. After alignment, suspension, or tire changes, that can shift. We recalibrate it so the system warns and steers correctly.</p>
+        <div class="hero-actions">
+          <a href="#quote" class="btn-primary">Get a Quote</a>
+          <a href="tel:+14244844297" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (424) 484-4297
+          </a>
+          <a href="sms:+14244844297" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Text Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="problem" aria-labelledby="what-heading">
+    <div class="container">
+      <div class="problem-grid">
+        <div>
+          <header class="section-header reveal" style="margin-bottom:1.5rem;">
+            <p class="section-eyebrow">How It Works</p>
+            <h2 class="section-title" id="what-heading">Why Alignment Affects Lane Assist</h2>
+            <div class="divider-line"></div>
+          </header>
+          <div class="prose reveal">
+            <p>Lane assist uses the forward-facing camera to find the lane lines, then compares them to the direction the vehicle is traveling. That direction comes from the wheel alignment, specifically the thrust angle: the direction the rear wheels push the car.</p>
+            <p>If the alignment or ride height changes, <strong>the camera's idea of straight ahead no longer matches where the car actually goes</strong>. The result can be a car that drifts toward one line, warnings that come late, or a steering wheel that tugs when it shouldn't.</p>
+          </div>
+        </div>
+        <div class="brand-card reveal">
+          <h3>Systems That Rely on It</h3>
+          <p class="brand-sub">Driver assistance features</p>
+          <ul class="solve-list" style="margin-top:0.5rem;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Lane departure warning</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Lane keep assist</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Lane centering</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Road edge departure warning</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Highway driving assist (on some vehicles)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN NEEDED -->
+  <section class="benefits" aria-labelledby="when-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <p class="section-eyebrow">When It's Needed</p>
+        <h2 class="section-title" id="when-heading">When Calibration Is Required</h2>
+        <p class="section-sub">Requirements vary by manufacturer. These are the most common reasons a vehicle needs this calibration. Not sure? Call or text us the year, make, model, and what was done.</p>
+        <div class="divider-line"></div>
+      </header>
+      <div class="benefit-grid">
+        <div class="benefit reveal">
+          <div class="benefit-num">01</div>
+          <div>
+            <h4>Wheel Alignment</h4>
+            <p>Especially when the thrust angle or rear toe was adjusted.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <div class="benefit-num">02</div>
+          <div>
+            <h4>Suspension or Steering Repair</h4>
+            <p>Control arms, struts, tie rods, or steering rack work.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <div class="benefit-num">03</div>
+          <div>
+            <h4>Tire or Wheel Changes</h4>
+            <p>A different tire size changes ride height and geometry.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <div class="benefit-num">04</div>
+          <div>
+            <h4>Lowering or Lift Kit</h4>
+            <p>Ride height changes shift the camera's view of the road.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <div class="benefit-num">05</div>
+          <div>
+            <h4>Collision Damage</h4>
+            <p>Impacts that affect suspension or body alignment.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <div class="benefit-num">06</div>
+          <div>
+            <h4>Drifting or Pulling</h4>
+            <p>Lane assist warnings, late alerts, or the wheel tugging.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note-box reveal"><strong>Alignment comes first.</strong> Before calibration, the vehicle's wheel alignment has to be within the manufacturer's specification. If it isn't, it needs to be corrected first, otherwise the calibration is set to the wrong reference. Many vehicles also need a steering angle sensor reset after an alignment, and we check for it during the pre-scan.</div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" aria-labelledby="process-heading">
+    <div class="container">
+      <header class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 3.5rem;">
+        <p class="section-eyebrow">Our Process</p>
+        <h2 class="section-title" id="process-heading">Done to the Manufacturer's Procedure</h2>
+        <p class="section-sub" style="margin:0 auto;">Every job is scanned before and after, so you have proof the system works.</p>
+        <div class="divider-line" style="margin:1rem auto 0;"></div>
+      </header>
+      <div class="process-steps">
+        <div class="process-step reveal"><div class="step-num">01</div><h3>Pre-Scan</h3><p>We scan the vehicle and record any existing fault codes before touching anything.</p></div>
+        <div class="process-step reveal"><div class="step-num">02</div><h3>Set Up</h3><p>The vehicle is prepared to the manufacturer's procedure: level floor, tire pressures, and targets placed to exact measurements.</p></div>
+        <div class="process-step reveal"><div class="step-num">03</div><h3>Calibrate</h3><p>Static calibration with targets, dynamic calibration on the road, or both, exactly as the manufacturer specifies.</p></div>
+        <div class="process-step reveal"><div class="step-num">04</div><h3>Verify &amp; Report</h3><p>A post-scan confirms the system passes. You get the pre-scan, calibration record, and post-scan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP STRIP -->
+  <div class="cta-strip">
+    <div class="container cta-inner">
+      <div>
+        <h3>Sending this job from your shop?</h3>
+        <p>Glass shops, collision centers, and dealerships sublet calibration to us with no minimums or contract.</p>
+      </div>
+      <a href="/shops" class="btn-primary">Partner With Us →</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <p class="section-eyebrow">Common Questions</p>
+        <h2 class="section-title" id="faq-heading">Lane Assist Calibration FAQ</h2>
+        <div class="divider-line"></div>
+      </header>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q">Do I need calibration after a wheel alignment? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Many manufacturers require or recommend it, especially when the alignment changed the thrust angle. Requirements vary by vehicle, so send us the year, make, and model and what was done, and we'll tell you.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">My car pulls or lane assist tugs the wheel. Is that calibration? <span class="plus">+</span></button>
+          <div class="faq-a"><p>It can be calibration, alignment, or both. A pre-scan and an alignment check tell us which. If the alignment is out of spec, it should be corrected before calibration.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">I lowered or lifted my vehicle. Will lane assist still work? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Ride height changes alter the camera's view of the road and the vehicle's geometry, so recalibration is often needed afterward for the system to work as designed. Very large changes can go beyond what some systems are able to calibrate to.</p></div>
+        </div>
+      </div>
+      <p class="reveal" style="margin-top:1.5rem;font-size:0.92rem;color:var(--text);">More answers on our <a href="/faq" style="color:var(--cyan);text-decoration:none;border-bottom:1px solid var(--cyan-mid);">FAQ page</a>.</p>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="related" aria-labelledby="related-heading">
+    <div class="container">
+      <header class="section-header reveal" style="margin-bottom:2rem;">
+        <p class="section-eyebrow">Related</p>
+        <h2 class="section-title" id="related-heading">Other Services</h2>
+        <div class="divider-line"></div>
+      </header>
+      <div class="related-grid reveal">
+        <a href="/windshield-camera-calibration"><strong>Windshield Camera Calibration</strong><span>Front camera calibration after glass replacement</span></a>
+        <a href="/radar-calibration"><strong>Front Radar Calibration</strong><span>Adaptive cruise and emergency braking radar</span></a>
+        <a href="/blind-spot-calibration"><strong>Blind Spot Calibration</strong><span>Rear corner radar and cross-traffic alert</span></a>
+        <a href="/360-camera-calibration"><strong>360 Camera Calibration</strong><span>Surround-view and backup camera systems</span></a>
+        <a href="/blog-calibration-requirements"><strong>Guide: Calibration Requirements</strong><span>Static vs. dynamic calibration explained</span></a>
+        <a href="/programming"><strong>Programming &amp; Coding</strong><span>Replaced module? We program it and calibrate in one visit</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section class="partner" id="quote" aria-labelledby="quote-heading">
+    <div class="container">
+      <div class="partner-grid">
+        <div>
+          <header class="section-header reveal" style="margin-bottom:1rem;">
+            <p class="section-eyebrow">Get a Quote</p>
+            <h2 class="section-title" id="quote-heading">Book Your Calibration</h2>
+            <p class="section-sub">Send us the vehicle and what was done, and we'll confirm the procedure, timing, and price. Shops and dealerships welcome.</p>
+            <div class="divider-line"></div>
+          </header>
+          <div class="contact-info">
+            <div class="contact-method reveal">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div><h4>Call or Text</h4><a href="tel:+14244844297">(424) 484-4297</a><p class="contact-note">Text us anytime and we'll get back to you as soon as possible. <a href="sms:+14244844297">Send a text →</a></p></div>
+            </div>
+            <div class="contact-method reveal">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><h4>Email</h4><a href="mailto:info@aceautolab.com">info@aceautolab.com</a></div>
+            </div>
+            <div class="contact-method reveal">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><h4>Business Hours</h4><p>Tuesday – Saturday: 9:30 AM – 6:30 PM<br/>Sunday: 9:30 AM – 2:00 PM<br/>Monday: Closed</p></div>
+            </div>
+            <div class="contact-method reveal">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+              <div>
+                <h4>Find Us Online</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/aceautolabla/" target="_blank" rel="noopener" aria-label="ACE AutoLab on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+                  <a href="https://www.yelp.com/biz/ace-autolab-gardena-2" target="_blank" rel="noopener" aria-label="ACE AutoLab on Yelp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Yelp</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form class="lead-form" id="quoteForm">
+            <input type="hidden" name="access_key" value="d2481c16-a7ca-4523-87a2-6e675f4c9b0e"/>
+            <input type="hidden" name="subject" value="New Calibration Quote Request — Lane Assist Calibration"/>
+            <input type="hidden" name="from_name" value="ACE AutoLab — Lane Assist Calibration Page"/>
+            <input type="checkbox" name="botcheck" style="display:none"/>
+
+            <div class="form-row">
+              <div class="field"><label for="fname">Name</label><input type="text" id="fname" name="name" placeholder="John Smith" autocomplete="name" required/></div>
+              <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="(424) 484-4297" autocomplete="tel" required/></div>
+            </div>
+            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="john@email.com" autocomplete="email" required/></div>
+            <div class="form-row">
+              <div class="field"><label for="vehicle">Year / Make / Model</label><input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2021 Toyota RAV4" required/></div>
+              <div class="field"><label for="vin">VIN (optional)</label><input type="text" id="vin" name="vin" placeholder="17 characters"/></div>
+            </div>
+            <div class="field">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required>
+                <option>Windshield Camera Calibration</option>
+                <option>Front Radar Calibration</option>
+                <option>Blind Spot Calibration</option>
+                <option>360 Camera Calibration</option>
+                <option selected>Lane Assist Calibration</option>
+                <option>LiDAR Calibration</option>
+                <option>Programming + Calibration</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ctype">I Am A</label>
+              <select id="ctype" name="customer_type">
+                <option value="" disabled selected>Select one</option>
+                <option>Vehicle owner</option>
+                <option>Shop / Dealership</option>
+              </select>
+            </div>
+            <div class="field"><label for="message">What Was Done to the Vehicle?</label><textarea id="message" name="message" placeholder="Windshield replaced, bumper repaired, alignment, warning lights, etc."></textarea></div>
+            <button type="submit" class="form-submit" id="submitBtn">Request a Quote →</button>
+            <p class="form-note" id="formNote">We respond within 1 hour during business hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/ace-autolab-logo-dark.svg" alt="ACE AutoLab" height="100" style="display:block;margin-bottom:0.5rem;background:#090e13;"/>
+          <p>ACE AutoLab provides expert ADAS calibration services across Los Angeles for consumers and trade partners alike. OEM procedures, full documentation, same-day availability.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/aceautolabla/" target="_blank" rel="noopener" aria-label="ACE AutoLab on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+            <a href="https://www.yelp.com/biz/ace-autolab-gardena-2" target="_blank" rel="noopener" aria-label="ACE AutoLab on Yelp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Yelp</span></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/windshield-camera-calibration">Windshield Camera Calibration</a></li>
+            <li><a href="/radar-calibration">Radar Calibration</a></li>
+            <li><a href="/blind-spot-calibration">Blind Spot Calibration</a></li>
+            <li><a href="/360-camera-calibration">360 Camera Calibration</a></li>
+            <li><a href="/lane-assist-calibration">Lane Assist Calibration</a></li>
+            <li><a href="/#services">LiDAR Calibration</a></li>
+            <li><a href="/programming">Programming &amp; Coding</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/shops">For Shops</a></li>
+            <li><a href="/#process">How It Works</a></li>
+            <li><a href="/#areas">Service Areas</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="tel:+14244844297">(424) 484-4297</a></li>
+            <li><a href="mailto:info@aceautolab.com">info@aceautolab.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/blog-windshield-calibration">Windshield Calibration</a></li>
+            <li><a href="/blog-uncalibrated-collision">Post-Collision Calibration</a></li>
+            <li><a href="/blog-calibration-requirements">Calibration Requirements</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ACE AutoLab — Automotive Calibration Experts LLC<span class="footer-dot">·</span><a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy Policy</a></span>
+        <span>Los Angeles, CA<span class="footer-dot">·</span>ADAS Calibration Specialists</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Shrinking nav on scroll
+    const navEl  = document.querySelector('.nav-inner');
+    const logoEl = document.getElementById('navLogo');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) { navEl.style.height = '68px'; logoEl.height = 52; }
+      else { navEl.style.height = '100px'; logoEl.height = 120; }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Quote form
+    const form = document.getElementById('quoteForm');
+    const btn  = document.getElementById('submitBtn');
+    const note = document.getElementById('formNote');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      const json = JSON.stringify(Object.fromEntries(new FormData(form)));
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: json
+        });
+        const result = await res.json();
+        if (result.success) {
+          aceConvert('form');
+          btn.textContent = 'Request Sent ✓';
+          btn.style.background = '#2ED18C';
+          note.textContent = "Thanks! We'll be in touch within 1 hour during business hours.";
+          note.style.color = '#2ED18C';
+          form.reset();
+        } else { throw new Error(result.message); }
+      } catch(err) {
+        btn.textContent = 'Request a Quote →';
+        btn.disabled = false;
+        note.textContent = 'Something went wrong. Please call or text us at (424) 484-4297.';
+        note.style.color = '#ff6060';
+      }
+    });
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+  <script>
+    // Mobile menu
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('navMenu');
+      if (!toggle || !menu) return;
+      function setOpen(open) {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 1180) setOpen(false); });
+    })();
+  </script>
+</body>
+</html>
