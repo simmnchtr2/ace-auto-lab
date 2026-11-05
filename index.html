@@ -319,6 +319,18 @@
       .nav-links.open a { display: block; padding: 1rem 0; font-size: 1rem; }
       .nav-links.open a.nav-cta { text-align: center; padding: 0.9rem 1.2rem; }
     }
+    /* PROMO STRIP */
+    .promo-strip { background: linear-gradient(90deg, rgba(15,138,95,0.14), rgba(15,138,95,0.04)); border-top: 1px solid var(--cyan-mid); border-bottom: 1px solid var(--cyan-mid); padding: 2.6rem 0; }
+    .promo-inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+    .promo-text { max-width: 640px; }
+    .promo-text .promo-eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.5rem; }
+    .promo-text h3 { font-family: 'Orbitron', monospace; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; color: var(--white); margin-bottom: 0.6rem; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.4rem 0.8rem; }
+    .promo-price { color: #2ED18C; }
+    .promo-ship { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+    .promo-text p { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .promo-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+    .promo-link { font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; color: var(--cyan); text-decoration: none; }
+    .promo-link:hover { color: #2ED18C; }
   </style>
 </head>
 <body>
@@ -436,6 +448,21 @@
       </div>
     </div>
   </section>
+
+  <!-- PROMO: AIRBAG RESET -->
+  <div class="promo-strip">
+    <div class="container promo-inner">
+      <div class="promo-text">
+        <p class="promo-eyebrow">New · Flat Rate</p>
+        <h3>Airbag Module Reset <span class="promo-price">$89</span><span class="promo-ship">+ return shipping</span></h3>
+        <p>Airbag light still on after the repair? We clear the crash data so your original SRS module can be reused. Mail it in from anywhere, or bring the module or vehicle in. Same-day turnaround once we receive it.</p>
+      </div>
+      <div class="promo-actions">
+        <a href="/airbag-module-reset" class="btn-primary">Start a Mail-In</a>
+        <a href="/tpms-programming" class="promo-link">TPMS programming: $20 per tire →</a>
+      </div>
+    </div>
+  </div>
 
   <section class="why" id="why" aria-labelledby="why-heading">
     <div class="container">
@@ -806,6 +833,8 @@
             <li><a href="/lane-assist-calibration">Lane Assist Calibration</a></li>
             <li><a href="/#services">LiDAR Calibration</a></li>
             <li><a href="/programming">Programming &amp; Coding</a></li>
+            <li><a href="/airbag-module-reset">Airbag Module Reset</a></li>
+            <li><a href="/tpms-programming">TPMS Programming</a></li>
           </ul>
         </div>
         <div class="footer-col">

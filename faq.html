@@ -155,6 +155,22 @@
     },
     {
       "@type": "Question",
+      "name": "Do you reset airbag (SRS) modules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We reset airbag modules for $89 plus return shipping, with same-day turnaround once we receive the module. You can mail it in or bring the module or vehicle to us. All deployed parts must already be replaced. See Airbag Module Reset for mail-in steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you program TPMS sensors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for any make and model, at $20 per tire. The price is for programming and relearn only, so the sensors need to already be installed. Text us your VIN or year, make, and model to confirm. See TPMS Programming."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do you do performance tuning?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -421,6 +437,13 @@
     .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; }
     .tag-list li { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); background: var(--cyan-dim); border: 1px solid var(--cyan-mid); padding: 0.3rem 0.65rem; }
     .combo { background: var(--bg); }
+    .flat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .flat-card { display: flex; flex-direction: column; }
+    .flat-card .flat-price { display: flex; align-items: baseline; gap: 0.5rem; margin: 0.2rem 0 1rem; }
+    .flat-card .flat-price strong { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .flat-card .flat-price span { font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
+    .flat-card .btn-secondary { align-self: flex-start; margin-top: auto; }
+    @media (max-width: 900px) { .flat-grid { grid-template-columns: 1fr; } }
     @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } }
       /* MOBILE MENU */
     .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid var(--cyan-mid); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
@@ -559,6 +582,14 @@
           <div class="faq-a"><p>We work on all makes and models, including domestic, Japanese, Korean, and European vehicles, plus EVs. If you have a specific vehicle in mind, call or text us and we'll confirm.</p></div>
         </div>
         <div class="faq-item">
+          <button class="faq-q">Do you reset airbag (SRS) modules? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Yes. We reset airbag modules for $89 plus return shipping, with same-day turnaround once we receive the module. You can mail it in or bring the module or vehicle to us. All deployed parts must already be replaced. See <a href="/airbag-module-reset">Airbag Module Reset</a> for mail-in steps.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you program TPMS sensors? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Yes, for any make and model, at $20 per tire. The price is for programming and relearn only, so the sensors need to already be installed. Text us your VIN or year, make, and model to confirm. See <a href="/tpms-programming">TPMS Programming</a>.</p></div>
+        </div>
+        <div class="faq-item">
           <button class="faq-q">Do you do performance tuning? <span class="plus">+</span></button>
           <div class="faq-a"><p>No. We focus on ADAS calibration, module programming and coding, and diagnostics.</p></div>
         </div>
@@ -654,6 +685,8 @@
             <li><a href="/lane-assist-calibration">Lane Assist Calibration</a></li>
             <li><a href="/#services">LiDAR Calibration</a></li>
             <li><a href="/programming">Programming &amp; Coding</a></li>
+            <li><a href="/airbag-module-reset">Airbag Module Reset</a></li>
+            <li><a href="/tpms-programming">TPMS Programming</a></li>
           </ul>
         </div>
         <div class="footer-col">

@@ -332,6 +332,13 @@
     .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; }
     .tag-list li { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); background: var(--cyan-dim); border: 1px solid var(--cyan-mid); padding: 0.3rem 0.65rem; }
     .combo { background: var(--bg); }
+    .flat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .flat-card { display: flex; flex-direction: column; }
+    .flat-card .flat-price { display: flex; align-items: baseline; gap: 0.5rem; margin: 0.2rem 0 1rem; }
+    .flat-card .flat-price strong { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .flat-card .flat-price span { font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
+    .flat-card .btn-secondary { align-self: flex-start; margin-top: auto; }
+    @media (max-width: 900px) { .flat-grid { grid-template-columns: 1fr; } }
     @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } }
       /* MOBILE MENU */
     .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid var(--cyan-mid); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
@@ -675,6 +682,8 @@
             <li><a href="/lane-assist-calibration">Lane Assist Calibration</a></li>
             <li><a href="/#services">LiDAR Calibration</a></li>
             <li><a href="/programming">Programming &amp; Coding</a></li>
+            <li><a href="/airbag-module-reset">Airbag Module Reset</a></li>
+            <li><a href="/tpms-programming">TPMS Programming</a></li>
           </ul>
         </div>
         <div class="footer-col">

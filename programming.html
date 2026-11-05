@@ -126,6 +126,26 @@
       },
       {
         "@type": "Offer",
+        "price": "89.00",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Airbag (SRS) module reset",
+          "url": "https://aceautolab.com/airbag-module-reset"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "20.00",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "TPMS sensor programming (per tire)",
+          "url": "https://aceautolab.com/tpms-programming"
+        }
+      },
+      {
+        "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": "Navigation and software updates"
@@ -392,6 +412,13 @@
     .tag-list { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; }
     .tag-list li { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); background: var(--cyan-dim); border: 1px solid var(--cyan-mid); padding: 0.3rem 0.65rem; }
     .combo { background: var(--bg); }
+    .flat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .flat-card { display: flex; flex-direction: column; }
+    .flat-card .flat-price { display: flex; align-items: baseline; gap: 0.5rem; margin: 0.2rem 0 1rem; }
+    .flat-card .flat-price strong { font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 900; color: var(--white); line-height: 1; }
+    .flat-card .flat-price span { font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
+    .flat-card .btn-secondary { align-self: flex-start; margin-top: auto; }
+    @media (max-width: 900px) { .flat-grid { grid-template-columns: 1fr; } }
     @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; } }
       /* MOBILE MENU */
     .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid var(--cyan-mid); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
@@ -453,6 +480,34 @@
             Text Us
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLAT-RATE SERVICES -->
+  <section class="benefits" id="flat-rate" aria-labelledby="flat-heading">
+    <div class="container">
+      <header class="section-header reveal">
+        <p class="section-eyebrow">Flat-Rate Services</p>
+        <h2 class="section-title" id="flat-heading">Quick Jobs, Upfront Prices</h2>
+        <p class="section-sub">No quote needed. Text us your vehicle to confirm, then bring it in or mail it in.</p>
+        <div class="divider-line"></div>
+      </header>
+      <div class="flat-grid">
+        <article class="brand-card flat-card reveal">
+          <h3>Airbag Module Reset</h3>
+          <p class="brand-sub">SRS crash data reset</p>
+          <div class="flat-price"><strong>$89</strong><span>+ return shipping</span></div>
+          <p>Clear crash data from your airbag module so it can be reused. Mail it in from anywhere or bring the module or vehicle in. Same-day turnaround once we receive it.</p>
+          <a href="/airbag-module-reset" class="btn-secondary">Learn More &amp; Mail-In Steps →</a>
+        </article>
+        <article class="brand-card flat-card reveal">
+          <h3>TPMS Sensor Programming</h3>
+          <p class="brand-sub">Any make and model</p>
+          <div class="flat-price"><strong>$20</strong><span>per tire</span></div>
+          <p>Programming and relearn for tire pressure sensors already installed in your wheels. Text us your VIN or year, make, and model to confirm.</p>
+          <a href="/tpms-programming" class="btn-secondary">Learn More →</a>
+        </article>
       </div>
     </div>
   </section>
@@ -718,6 +773,8 @@
                 <option>Key Programming / Immobilizer</option>
                 <option>DME / ECU Services</option>
                 <option>Diagnostics</option>
+                <option>Airbag Module Reset</option>
+                <option>TPMS Programming</option>
                 <option>Programming + ADAS Calibration</option>
                 <option>Not sure</option>
               </select>
@@ -760,6 +817,8 @@
             <li><a href="/lane-assist-calibration">Lane Assist Calibration</a></li>
             <li><a href="/#services">LiDAR Calibration</a></li>
             <li><a href="/programming">Programming &amp; Coding</a></li>
+            <li><a href="/airbag-module-reset">Airbag Module Reset</a></li>
+            <li><a href="/tpms-programming">TPMS Programming</a></li>
           </ul>
         </div>
         <div class="footer-col">
